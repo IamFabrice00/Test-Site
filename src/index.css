@@ -188,7 +188,24 @@ h1, h2, h3 {
   max-width: 500px;
 }
 
+.newsletter-input {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--glass-border);
+  padding: 1rem 1.5rem;
+  border-radius: 99px;
+  color: white;
+  font-family: inherit;
+  transition: border-color 0.3s ease;
+}
+
+.newsletter-input:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
 .contact-card {
+  margin-top: 2rem;
   background: var(--glass);
   backdrop-filter: blur(20px);
   border: 1px solid var(--glass-border);

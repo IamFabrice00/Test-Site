@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin, ExternalLink, MessageCircle, Send } from 'lucide-react'
+import { Mail, MapPin, ExternalLink, MessageCircle } from 'lucide-react'
 import { motion } from 'framer-motion'
 
 export default function Overlay() {
@@ -36,7 +36,7 @@ export default function Overlay() {
             Basato a Milano, pronto a scalare il tuo business.
           </motion.p>
 
-          <motion.div variants={item} className="contact-card" style={{ marginTop: '2rem', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '2rem' }}>
+          <motion.div variants={item} className="contact-card">
             <div className="contact-item">
               <label><Mail size={14} style={{verticalAlign: 'middle', marginRight: '4px'}}/> Email</label>
               <a href="mailto:fabrice.logon@testsitelab.it">fabrice.logon@testsitelab.it</a>
@@ -71,7 +71,7 @@ export default function Overlay() {
             <p>Ricevi consigli esclusivi su design e marketing ogni settimana.</p>
           </div>
           <form className="newsletter-form" onSubmit={(e) => e.preventDefault()}>
-            <input type="email" placeholder="la-tua@email.com" style={{ flex: 1, background: 'rgba(255,255,255,0.05)', border: '1px solid var(--glass-border)', padding: '1rem', borderRadius: '99px', color: 'white' }} />
+            <input type="email" placeholder="la-tua@email.com" className="newsletter-input" />
             <button className="btn-primary" style={{ width: 'auto' }}>Iscriviti</button>
           </form>
         </motion.section>
