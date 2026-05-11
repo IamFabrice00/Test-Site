@@ -1,6 +1,6 @@
-import { Mail, MapPin, ExternalLink, MessageCircle, Code, Layout, Wind, Cpu, Atom, Terminal, Palette, Gauge, CheckCircle2, Loader2 } from 'lucide-react'
+import { Mail, MapPin, MessageCircle, Code, Layout, Wind, Cpu, Atom, Terminal, Palette, Gauge, CheckCircle2, Loader2 } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { useTranslation, Trans } from 'react-i18next'
+import { useTranslation } from 'react-i18next'
 import { useState } from 'react'
 import emailjs from '@emailjs/browser'
 

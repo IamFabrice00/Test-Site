@@ -1,9 +1,7 @@
 import { Canvas } from '@react-three/fiber'
-import { Suspense } from 'react'
 import Scene from './components/Scene'
 import Overlay from './components/Overlay'
-import CustomCursor from './components/CustomCursor'
-import { Loader, AdaptiveDpr, AdaptiveEvents } from '@react-three/drei'
+import { AdaptiveDpr, AdaptiveEvents } from '@react-three/drei'
 
 function App() {
   return (
