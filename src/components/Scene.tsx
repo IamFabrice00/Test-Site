@@ -56,9 +56,9 @@ export default function Scene() {
       <PerspectiveCamera makeDefault position={[0, 0, 8]} />
       <Environment preset="city" />
       
-      <ambientLight intensity={0.2} />
-      <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} intensity={2} castShadow />
-      <pointLight position={[-10, -10, -10]} color="#6366f1" intensity={2} />
+      <ambientLight intensity={1.5} />
+      <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} intensity={5} castShadow />
+      <pointLight position={[-10, -10, -10]} color="#6366f1" intensity={5} />
       
       <RotatingGroup />
 
@@ -71,8 +71,6 @@ export default function Scene() {
         blur={2} 
         far={4.5} 
       />
-
-      <fog attach="fog" args={['#030712', 5, 20]} />
     </>
   )
 }

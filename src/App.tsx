@@ -8,18 +8,13 @@ import { Loader, AdaptiveDpr, AdaptiveEvents } from '@react-three/drei'
 function App() {
   return (
     <>
-      <CustomCursor />
       <div className="canvas-container">
         <Canvas dpr={[1, 2]} gl={{ antialias: true }}>
-          <Suspense fallback={null}>
-            <Scene />
-          </Suspense>
+          <Scene />
           <AdaptiveDpr pixelated />
           <AdaptiveEvents />
         </Canvas>
-        <Loader />
       </div>
-      
       <Overlay />
     </>
   )

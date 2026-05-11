@@ -125,10 +125,13 @@ export default function Overlay() {
         <motion.div variants={container} initial="hidden" animate="show">
           <motion.div variants={item} className="badge">{t('hero.badge')}</motion.div>
           <motion.h1 variants={item}>
-            <Trans i18nKey="hero.title">
-              Realizzo Esperienze <br />
-              <span style={{color: '#6366f1'}}>Digitali Future.</span>
-            </Trans>
+            {t('hero.title').includes('<1>') ? (
+              <>
+                {t('hero.title').split('<1>')[0]}
+                <br />
+                <span style={{color: '#6366f1'}}>{t('hero.title').split('<1>')[1].split('</1>')[0]}</span>
+              </>
+            ) : t('hero.title')}
           </motion.h1>
           <motion.p variants={item}>
             {t('hero.description')}
@@ -141,15 +144,15 @@ export default function Overlay() {
             </div>
             <div className="contact-item">
               <label><MessageCircle size={14} style={{verticalAlign: 'middle', marginRight: '4px'}}/> {t('contact.whatsapp')}</label>
-              <a href="https://wa.me/393519877057" target="_blank" rel="noopener noreferrer">+39 351 987 7057</a>
+              <a href="https://wa.me/393517173874" target="_blank" rel="noopener noreferrer">+39 351 717 3874</a>
             </div>
             <div className="contact-item">
               <label><MapPin size={14} style={{verticalAlign: 'middle', marginRight: '4px'}}/> {t('contact.location')}</label>
               <span>{t('contact.location_value')}</span>
             </div>
             <div className="contact-item">
-              <label><ExternalLink size={14} style={{verticalAlign: 'middle', marginRight: '4px'}}/> {t('contact.consultancy')}</label>
-              <span style={{fontWeight: 700, color: '#f43f5e'}}>{t('contact.free')}</span>
+              <label>{t('contact.consultancy')}</label>
+              <span style={{fontWeight: 800, color: '#f43f5e'}}>{t('contact.free')}</span>
             </div>
           </motion.div>
         </motion.div>
@@ -158,10 +161,10 @@ export default function Overlay() {
       <div className="sections-container">
         {/* Stack Section */}
         <motion.section 
-          className="content-section"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
         >
           <div className="section-header">
             <div>
@@ -170,38 +173,50 @@ export default function Overlay() {
             </div>
             <p className="section-description">{t('stack.description')}</p>
           </div>
-          
           <div className="stack-grid">
-            {stack.map((s) => (
-              <div key={s.name} className="stack-card">
-                <div className="stack-icon">{s.icon}</div>
-                <div className="stack-name">{s.label}</div>
-              </div>
+            {stack.map((item, i) => (
+              <motion.div 
+                key={i}
+                className="stack-card"
+                whileHover={{ y: -5, borderColor: '#6366f1' }}
+              >
+                <div className="stack-icon">{item.icon}</div>
+                <div className="stack-name">{item.name}</div>
+              </motion.div>
             ))}
           </div>
         </motion.section>
 
         {/* Values Section */}
         <motion.section 
-          className="values-grid"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ staggerChildren: 0.2 }}
+          transition={{ duration: 0.8 }}
         >
-          {values.map((v) => (
-            <motion.div 
-              key={v.key} 
-              className="value-card"
-              whileHover={{ y: -10 }}
-            >
-              <div className="value-icon" style={{ background: `${v.color}20`, color: v.color }}>
-                {v.icon}
-              </div>
-              <h3>{t(`values.${v.key}.title`)}</h3>
-              <p>{t(`values.${v.key}.desc`)}</p>
-            </motion.div>
-          ))}
+          <div className="section-header">
+            <div>
+              <div className="badge">{t('values.badge') || 'Valori'}</div>
+              <h2>Capabilities</h2>
+            </div>
+            <p className="section-description">Il mio approccio si basa su tre pilastri fondamentali.</p>
+          </div>
+          <div className="values-grid">
+            {values.map((v, i) => (
+              <motion.div 
+                key={i}
+                className="value-card"
+                whileHover={{ scale: 1.02 }}
+                style={{ background: `linear-gradient(135deg, ${v.color}08, transparent)` }}
+              >
+                <div className="value-icon" style={{ backgroundColor: `${v.color}15`, color: v.color }}>
+                  {v.icon}
+                </div>
+                <h3>{t(`values.${v.key}.title`)}</h3>
+                <p>{t(`values.${v.key}.desc`)}</p>
+              </motion.div>
+            ))}
+          </div>
         </motion.section>
 
         {/* Newsletter Section */}
@@ -265,7 +280,7 @@ export default function Overlay() {
       </div>
 
       <footer className="footer">
-        {t('footer')}
+        <p>{t('footer')}</p>
       </footer>
     </div>
   )
