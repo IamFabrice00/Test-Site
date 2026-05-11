@@ -1,0 +1,48 @@
+{
+  "header": {
+    "badge": "Disponible pour de nouveaux projets"
+  },
+  "hero": {
+    "badge": "Web Design & Développement",
+    "title": "Créer des Expériences <1>Digitales pour le Futur.</1>",
+    "description": "Je transforme vos idées en sites web haute performance, optimisés pour le SEO et au design premium. Basé à Milan, prêt à faire croître votre entreprise."
+  },
+  "contact": {
+    "email": "Email",
+    "whatsapp": "WhatsApp",
+    "location": "Siège",
+    "location_value": "Milan, Italie",
+    "consultancy": "Consultation",
+    "free": "GRATUIT"
+  },
+  "newsletter": {
+    "badge": "Newsletter",
+    "title": "Restez informé.",
+    "description": "Recevez des conseils exclusifs sur le design et le marketing chaque semaine.",
+    "placeholder": "votre-email@exemple.com",
+    "button": "S'inscrire",
+    "success_title": "Bienvenue à bord !",
+    "success_desc": "Vérifiez votre email pour la confirmation. Vous recevrez bientôt nos nouvelles.",
+    "error": "Oups ! Quelque chose s'est mal passé. Réessayez."
+  },
+  "stack": {
+    "badge": "Compétences",
+    "title": "Ma Stack",
+    "description": "J'utilise les technologies les plus modernes pour garantir des applications web évolutives, maintenables et ultra-rapides."
+  },
+  "values": {
+    "clean_code": {
+      "title": "Code Propre",
+      "desc": "J'écris un code sémantique, accessible et modulaire, facile à maintenir et à faire évoluer pour le succès du projet à long terme."
+    },
+    "modern_design": {
+      "title": "Design Moderne",
+      "desc": "J'utilise une esthétique minimaliste et le glassmorphism pour créer des interfaces époustouflantes qui engagent et convertissent les utilisateurs."
+    },
+    "performance_first": {
+      "title": "Performance d'Abord",
+      "desc": "L'optimisation est au cœur de mon travail, garantissant des temps de chargement ultra-rapides et des interactions fluides sur tous les appareils."
+    }
+  },
+  "footer": "© 2026 Test Site Lab. Créé avec passion à Milan."
+}

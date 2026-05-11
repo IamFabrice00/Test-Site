@@ -1,0 +1,48 @@
+{
+  "header": {
+    "badge": "Disponibile per nuovi progetti"
+  },
+  "hero": {
+    "badge": "Web Design & Sviluppo",
+    "title": "Realizzo Esperienze <1>Digitali Future.</1>",
+    "description": "Trasformo le tue idee in siti web ad alte prestazioni, SEO friendly e dal design premium. Basato a Milano, pronto a scalare il tuo business."
+  },
+  "contact": {
+    "email": "Email",
+    "whatsapp": "WhatsApp",
+    "location": "Sede",
+    "location_value": "Milano, Italia",
+    "consultancy": "Consulenza",
+    "free": "GRATIS"
+  },
+  "newsletter": {
+    "badge": "Newsletter",
+    "title": "Rimani aggiornato.",
+    "description": "Ricevi consigli esclusivi su design e marketing ogni settimana.",
+    "placeholder": "la-tua@email.com",
+    "button": "Iscriviti",
+    "success_title": "Benvenuto a bordo!",
+    "success_desc": "Controlla la tua email per la conferma. Riceverai presto le nostre novità.",
+    "error": "Ops! Qualcosa è andato storto. Riprova."
+  },
+  "stack": {
+    "badge": "Competenze",
+    "title": "Il mio Stack",
+    "description": "Sfrutto le tecnologie più moderne per garantire applicazioni web scalabili, manutenibili e velocissime."
+  },
+  "values": {
+    "clean_code": {
+      "title": "Codice Pulito",
+      "desc": "Scrivo codice semantico, accessibile e modulare, facile da mantenere e scalare per il successo del progetto a lungo termine."
+    },
+    "modern_design": {
+      "title": "Design Moderno",
+      "desc": "Utilizzo estetica minimalista e glassmorphism per creare interfacce straordinarie che coinvolgono e convertono gli utenti."
+    },
+    "performance_first": {
+      "title": "Performance al Primo Posto",
+      "desc": "L'ottimizzazione è al centro del mio lavoro, garantendo tempi di caricamento fulminei e interazioni fluide su tutti i dispositivi."
+    }
+  },
+  "footer": "© 2026 Test Site Lab. Creato con passione a Milano."
+}

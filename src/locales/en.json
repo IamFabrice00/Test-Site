@@ -1,0 +1,48 @@
+{
+  "header": {
+    "badge": "Available for new projects"
+  },
+  "hero": {
+    "badge": "Web Design & Development",
+    "title": "Creating Digital <1>Experiences for the Future.</1>",
+    "description": "I transform your ideas into high-performance, SEO-friendly websites with premium design. Based in Milan, ready to scale your business."
+  },
+  "contact": {
+    "email": "Email",
+    "whatsapp": "WhatsApp",
+    "location": "Location",
+    "location_value": "Milan, Italy",
+    "consultancy": "Consultation",
+    "free": "FREE"
+  },
+  "newsletter": {
+    "badge": "Newsletter",
+    "title": "Stay updated.",
+    "description": "Get exclusive design and marketing tips every week.",
+    "placeholder": "your-email@example.com",
+    "button": "Subscribe",
+    "success_title": "Welcome aboard!",
+    "success_desc": "Check your email for confirmation. You'll hear from us soon.",
+    "error": "Oops! Something went wrong. Please try again."
+  },
+  "stack": {
+    "badge": "Capabilities",
+    "title": "My Stack",
+    "description": "Leveraging the most modern technologies to ensure scalable, maintainable, and blistering fast web applications."
+  },
+  "values": {
+    "clean_code": {
+      "title": "Clean Code",
+      "desc": "I write semantic, accessible, and modular code that is easy to maintain and scale for long-term project success."
+    },
+    "modern_design": {
+      "title": "Modern Design",
+      "desc": "Utilizing minimalist aesthetics and glassmorphism to create stunning interfaces that engage and convert users."
+    },
+    "performance_first": {
+      "title": "Performance First",
+      "desc": "Optimization is at the core of my work, ensuring lightning-fast load times and smooth interactions on all devices."
+    }
+  },
+  "footer": "© 2026 Test Site Lab. Created with passion in Milan."
+}
