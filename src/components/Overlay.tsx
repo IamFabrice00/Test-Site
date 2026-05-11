@@ -125,13 +125,21 @@ export default function Overlay() {
         <motion.div variants={container} initial="hidden" animate="show">
           <motion.div variants={item} className="badge">{t('hero.badge')}</motion.div>
           <motion.h1 variants={item}>
-            {t('hero.title').includes('<1>') ? (
-              <>
-                {t('hero.title').split('<1>')[0]}
-                <br />
-                <span style={{color: '#6366f1'}}>{t('hero.title').split('<1>')[1].split('</1>')[0]}</span>
-              </>
-            ) : t('hero.title')}
+            {(() => {
+              const title = t('hero.title')
+              if (title.includes('<1>')) {
+                const parts = title.split('<1>')
+                const before = parts[0]
+                const inside = parts[1]?.split('</1>')[0] || ''
+                return (
+                  <>
+                    {before}
+                    <span style={{ display: 'block', color: '#6366f1' }}>{inside}</span>
+                  </>
+                )
+              }
+              return title
+            })()}
           </motion.h1>
           <motion.p variants={item}>
             {t('hero.description')}
