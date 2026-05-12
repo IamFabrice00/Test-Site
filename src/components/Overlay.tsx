@@ -3,6 +3,8 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
 import { useState } from 'react'
 import emailjs from '@emailjs/browser'
+import LegalModal from './LegalModal'
+import CookieBanner from './CookieBanner'
 
 // EmailJS Configuration from .env
 const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID
@@ -13,6 +15,7 @@ export default function Overlay() {
   const { t, i18n } = useTranslation()
   const [email, setEmail] = useState('')
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
+  const [legalType, setLegalType] = useState<'privacy' | 'cookie' | 'terms' | null>(null)
   
   const currentLang = i18n.language?.split('-')[0] || 'it'
 
@@ -152,7 +155,7 @@ export default function Overlay() {
             </div>
             <div className="contact-item">
               <label><MessageCircle size={14} style={{verticalAlign: 'middle', marginRight: '4px'}}/> {t('contact.whatsapp')}</label>
-              <a href="https://wa.me/393517173874" target="_blank" rel="noopener noreferrer">+39 351 717 3874</a>
+              <a href="https://wa.me/393519877057" target="_blank" rel="noopener noreferrer">+39 351 987 7057</a>
             </div>
             <div className="contact-item">
               <label><MapPin size={14} style={{verticalAlign: 'middle', marginRight: '4px'}}/> {t('contact.location')}</label>
@@ -289,7 +292,23 @@ export default function Overlay() {
 
       <footer className="footer">
         <p>{t('footer')}</p>
+        <div className="legal-links">
+          <button onClick={() => setLegalType('privacy')}>{t('legal.privacy')}</button>
+          <button onClick={() => setLegalType('cookie')}>{t('legal.cookie')}</button>
+          <button onClick={() => {
+            localStorage.removeItem('cookie-consent')
+            window.location.reload()
+          }}>{t('legal.cookie_banner')}</button>
+          <button onClick={() => setLegalType('terms')}>{t('legal.terms')}</button>
+        </div>
       </footer>
+
+      <LegalModal 
+        isOpen={!!legalType} 
+        onClose={() => setLegalType(null)} 
+        type={legalType} 
+      />
+      <CookieBanner />
     </div>
   )
 }
