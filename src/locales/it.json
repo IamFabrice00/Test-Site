@@ -4,8 +4,8 @@
   },
   "hero": {
     "badge": "Web Design & Sviluppo",
-    "title": "Realizzo Esperienze <1>Digitali Future.</1>",
-    "description": "Trasformo le tue idee in siti web ad alte prestazioni, SEO friendly e dal design premium. Basato a Milano, pronto a scalare il tuo business."
+    "title": "Il sito che <1>hai sempre sognato.</1>",
+    "description": "Trasformo le tue idee in un sito web professionale, veloce e capace di attirare nuovi clienti."
   },
   "contact": {
     "email": "Email",
@@ -28,12 +28,12 @@
   "stack": {
     "badge": "Competenze",
     "title": "Il mio Stack",
-    "description": "Sfrutto le tecnologie più moderne per garantire applicazioni web scalabili, manutenibili e velocissime."
+    "description": "Lo 'Stack' è l'insieme degli strumenti che uso per costruire il tuo sito. Scelgo solo le tecnologie più affidabili per garantirti un risultato veloce, sicuro e facile da aggiornare nel tempo."
   },
   "values": {
     "clean_code": {
-      "title": "Codice Pulito",
-      "desc": "Scrivo codice semantico, accessibile e modulare, facile da mantenere e scalare per il successo del progetto a lungo termine."
+      "title": "Qualità Garantita",
+      "desc": "Lavoro con cura 'dietro le quinte' per assicurarmi che il tuo sito sia solido e sicuro. Sarà facile da gestire e modificare anche quando la tua attività crescerà."
     },
     "modern_design": {
       "title": "Design Moderno",
@@ -43,6 +43,49 @@
       "title": "Performance al Primo Posto",
       "desc": "L'ottimizzazione è al centro del mio lavoro, garantendo tempi di caricamento fulminei e interazioni fluide su tutti i dispositivi."
     }
+  },
+  "portfolio": {
+    "badge": "Portfolio",
+    "title": "Progetti in Evidenza",
+    "description": "Una selezione dei miei lavori più recenti, dove il design incontra la tecnologia d'avanguardia.",
+    "projects": [
+      {
+        "title": "Smart Eat .space",
+        "category": "App Wellness & AI",
+        "desc": "Un viaggio sensoriale nel mondo della nutrizione, dove l'intelligenza artificiale incontra il benessere attraverso animazioni fluide e organiche."
+      },
+      {
+        "title": "Coach NG",
+        "category": "Web Application",
+        "desc": "Il tuo compagno digitale per il fitness: monitora i tuoi allenamenti e raggiungi i tuoi obiettivi con un personal trainer dedicato."
+      },
+      {
+        "title": "Test Site Lab",
+        "category": "Portfolio 3D",
+        "desc": "Sito vetrina immersivo con animazione 3D e performance ottimizzate."
+      }
+    ]
+  },
+  "reviews": {
+    "badge": "Testimonianze",
+    "title": "Cosa dicono i clienti",
+    "items": [
+      {
+        "name": "Marco Rossi",
+        "role": "CEO @ TechStart",
+        "text": "Fabrice ha trasformato la nostra visione in realtà. Il design è incredibile e le performance sono oltre le aspettative."
+      },
+      {
+        "name": "Elena Bianchi",
+        "role": "Marketing Manager",
+        "text": "Professionista serio e creativo. Il nuovo sito ha aumentato le nostre conversioni del 40% in soli due mesi."
+      },
+      {
+        "name": "Luca Verdi",
+        "role": "Freelancer",
+        "text": "L'attenzione ai dettagli e la pulizia del codice sono ciò che lo distingue. Consigliatissimo per progetti premium."
+      }
+    ]
   },
   "footer": "© 2026 Test Site Lab. Creato con passione a Milano.",
   "legal": {

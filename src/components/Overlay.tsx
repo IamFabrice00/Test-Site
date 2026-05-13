@@ -230,6 +230,68 @@ export default function Overlay() {
           </div>
         </motion.section>
 
+        {/* Portfolio Section */}
+        <motion.section 
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
+          <div className="section-header">
+            <div>
+              <div className="badge">{t('portfolio.badge')}</div>
+              <h2>{t('portfolio.title')}</h2>
+            </div>
+            <p className="section-description">{t('portfolio.description')}</p>
+          </div>
+          <div className="portfolio-grid">
+            {(t('portfolio.projects', { returnObjects: true }) as any[]).map((project: any, i: number) => (
+              <motion.div 
+                key={i}
+                className="portfolio-card"
+                whileHover={{ scale: 1.02 }}
+              >
+                <div className="portfolio-content">
+                  <div className="portfolio-category">{project.category}</div>
+                  <h3>{project.title}</h3>
+                  <p>{project.desc}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.section>
+
+        {/* Reviews Section */}
+        <motion.section 
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
+          <div className="section-header">
+            <div>
+              <div className="badge">{t('reviews.badge')}</div>
+              <h2>{t('reviews.title')}</h2>
+            </div>
+            <p className="section-description">Cosa dicono i miei partner e clienti del lavoro svolto insieme.</p>
+          </div>
+          <div className="reviews-grid">
+            {(t('reviews.items', { returnObjects: true }) as any[]).map((review: any, i: number) => (
+              <motion.div 
+                key={i}
+                className="review-card"
+                whileHover={{ y: -5 }}
+              >
+                <p className="review-text">{review.text}</p>
+                <div className="review-author">
+                  <span className="review-author-name">{review.name}</span>
+                  <span className="review-author-role">{review.role}</span>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.section>
+
         {/* Newsletter Section */}
         <motion.section 
           className="newsletter-section"

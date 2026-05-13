@@ -4,8 +4,8 @@
   },
   "hero": {
     "badge": "Web Design & Development",
-    "title": "Creating Digital <1>Experiences for the Future.</1>",
-    "description": "I transform your ideas into high-performance, SEO-friendly websites with premium design. Based in Milan, ready to scale your business."
+    "title": "The website you've <1>always dreamed of.</1>",
+    "description": "I transform your ideas into a professional, fast website capable of attracting new customers."
   },
   "contact": {
     "email": "Email",
@@ -28,12 +28,12 @@
   "stack": {
     "badge": "Capabilities",
     "title": "My Stack",
-    "description": "Leveraging the most modern technologies to ensure scalable, maintainable, and blistering fast web applications."
+    "description": "The 'Stack' is the set of tools I use to build your site. I choose only the most reliable technologies to ensure a fast, secure result that's easy to update over time."
   },
   "values": {
     "clean_code": {
-      "title": "Clean Code",
-      "desc": "I write semantic, accessible, and modular code that is easy to maintain and scale for long-term project success."
+      "title": "Guaranteed Quality",
+      "desc": "I work carefully 'behind the scenes' to ensure your site is solid and secure. It will be easy to manage and modify even as your business grows."
     },
     "modern_design": {
       "title": "Modern Design",
@@ -43,6 +43,49 @@
       "title": "Performance First",
       "desc": "Optimization is at the core of my work, ensuring lightning-fast load times and smooth interactions on all devices."
     }
+  },
+  "portfolio": {
+    "badge": "Portfolio",
+    "title": "Featured Projects",
+    "description": "A selection of my most recent works, where design meets cutting-edge technology.",
+    "projects": [
+      {
+        "title": "Smart Eat .space",
+        "category": "Wellness & AI App",
+        "desc": "A sensory journey into nutrition, where AI meets wellness through fluid, organic animations."
+      },
+      {
+        "title": "Coach NG",
+        "category": "Web Application",
+        "desc": "Your digital fitness companion: track your workouts and reach your goals with a dedicated personal trainer."
+      },
+      {
+        "title": "Test Site Lab",
+        "category": "3D Portfolio",
+        "desc": "Immersive showcase site with 3D animation and optimized performance."
+      }
+    ]
+  },
+  "reviews": {
+    "badge": "Testimonials",
+    "title": "What Clients Say",
+    "items": [
+      {
+        "name": "Marco Rossi",
+        "role": "CEO @ TechStart",
+        "text": "Fabrice transformed our vision into reality. The design is incredible and the performance is beyond expectations."
+      },
+      {
+        "name": "Elena Bianchi",
+        "role": "Marketing Manager",
+        "text": "Serious and creative professional. The new site increased our conversions by 40% in just two months."
+      },
+      {
+        "name": "Luca Verdi",
+        "role": "Freelancer",
+        "text": "Attention to detail and clean code are what sets him apart. Highly recommended for premium projects."
+      }
+    ]
   },
   "footer": "© 2026 Test Site Lab. Created with passion in Milan.",
   "legal": {
