@@ -52,17 +52,20 @@
       {
         "title": "Smart Eat .space",
         "category": "App Bien-être & IA",
-        "desc": "Un voyage sensoriel dans la nutrition, où l'IA rencontre le bien-être grâce à des animations fluides et organiques."
+        "desc": "Un voyage sensoriel dans la nutrition, où l'IA rencontre le bien-être grâce à des animations fluides et organiques.",
+        "link": "https://smarteat.space"
       },
       {
         "title": "Coach NG",
         "category": "Application Web",
-        "desc": "Votre compagnon fitness digital : suivez vos entraînements et atteignez vos objectifs avec un coach personnel dédié."
+        "desc": "Votre compagnon fitness digital : suivez vos entraînements et atteignez vos objectifs avec un coach personnel dédié.",
+        "link": "https://fabricetest.site"
       },
       {
         "title": "Test Site Lab",
         "category": "Portfolio 3D",
-        "desc": "Site vitrine immersif avec animation 3D et performances optimisées."
+        "desc": "Site vitrine immersivo avec animation 3D et performances optimisées.",
+        "link": "https://testsitelab.it"
       }
     ]
   },

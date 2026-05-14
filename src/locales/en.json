@@ -52,17 +52,20 @@
       {
         "title": "Smart Eat .space",
         "category": "Wellness & AI App",
-        "desc": "A sensory journey into nutrition, where AI meets wellness through fluid, organic animations."
+        "desc": "A sensory journey into nutrition, where AI meets wellness through fluid, organic animations.",
+        "link": "https://smarteat.space"
       },
       {
         "title": "Coach NG",
         "category": "Web Application",
-        "desc": "Your digital fitness companion: track your workouts and reach your goals with a dedicated personal trainer."
+        "desc": "Your digital fitness companion: track your workouts and reach your goals with a dedicated personal trainer.",
+        "link": "https://fabricetest.site"
       },
       {
         "title": "Test Site Lab",
         "category": "3D Portfolio",
-        "desc": "Immersive showcase site with 3D animation and optimized performance."
+        "desc": "Immersive showcase site with 3D animation and optimized performance.",
+        "link": "https://testsitelab.it"
       }
     ]
   },

@@ -2,7 +2,6 @@ import { Mail, MapPin, MessageCircle, Code, Layout, Wind, Cpu, Atom, Terminal, P
 import { motion, AnimatePresence } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
 import { useState } from 'react'
-import emailjs from '@emailjs/browser'
 import LegalModal from './LegalModal'
 import CookieBanner from './CookieBanner'
 
@@ -30,22 +29,19 @@ export default function Overlay() {
     setStatus('loading')
 
     try {
-      await emailjs.send(
-        EMAILJS_SERVICE_ID,
-        EMAILJS_TEMPLATE_ID,
-        {
-          user_email: email,
-          language: currentLang,
-          site_name: 'Test Site Lab'
-        },
-        EMAILJS_PUBLIC_KEY
-      )
+      const response = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, language: currentLang, site_name: 'Test Site Lab' }),
+      });
+
+      if (!response.ok) throw new Error('Subscription failed');
 
       setStatus('success')
       setEmail('')
       setTimeout(() => setStatus('idle'), 5000)
     } catch (error) {
-      console.error('EmailJS Error:', error)
+      console.error('Newsletter Error:', error)
       setStatus('error')
       setTimeout(() => setStatus('idle'), 3000)
     }
@@ -246,17 +242,21 @@ export default function Overlay() {
           </div>
           <div className="portfolio-grid">
             {(t('portfolio.projects', { returnObjects: true }) as any[]).map((project: any, i: number) => (
-              <motion.div 
+              <motion.a 
                 key={i}
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="portfolio-card"
                 whileHover={{ scale: 1.02 }}
+                style={{ textDecoration: 'none', color: 'inherit', display: 'block' }}
               >
                 <div className="portfolio-content">
                   <div className="portfolio-category">{project.category}</div>
                   <h3>{project.title}</h3>
                   <p>{project.desc}</p>
                 </div>
-              </motion.div>
+              </motion.a>
             ))}
           </div>
         </motion.section>
@@ -337,7 +337,7 @@ export default function Overlay() {
                   />
                   <button 
                     className="btn-primary" 
-                    style={{ width: 'auto', display: 'flex', alignItems: 'center', gap: '0.5rem' }}
+                    style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem' }}
                     disabled={status === 'loading'}
                   >
                     {status === 'loading' ? <Loader2 className="animate-spin" size={18} /> : t('newsletter.button')}
