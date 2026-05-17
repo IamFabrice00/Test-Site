@@ -4,6 +4,7 @@
   },
   "hero": {
     "badge": "Web Design & Développement",
+    "badge_monitor": "Surveillance",
     "title": "Le site web dont vous <1>avez toujours rêvé.</1>",
     "description": "Je transforme vos idées en un site web professionnel, rapide et capable d'attirer de nouveaux clients."
   },
@@ -87,6 +88,66 @@
         "name": "Luca Verdi",
         "role": "Freelance",
         "text": "L'attention aux détails et la propreté du code sont ce qui le distingue. Hautement recommandé pour les projets premium."
+      }
+    ]
+  },
+  "services_modal": {
+    "title": "Mes Services",
+    "items": [
+      { 
+        "title": "Basique", 
+        "popular": false,
+        "price": "149€", 
+        "original_price": "299€",
+        "discount": "-50%",
+        "cta": "Commencez votre parcours",
+        "features": ["Design essentiel", "Site one-page", "Optimisation mobile", "SEO de base"] 
+      },
+      { 
+        "title": "Standard", 
+        "popular": true,
+        "popular_text": "Plus Populaire",
+        "price": "239€", 
+        "original_price": "399€",
+        "discount": "-40%",
+        "cta": "Créez votre site",
+        "features": ["Design sur mesure", "Jusqu'à 5 pages", "Performances optimisées", "SEO avancé", "Formulaires de contact"] 
+      },
+      { 
+        "title": "Premium", 
+        "popular": false,
+        "price": "419€", 
+        "original_price": "599€",
+        "discount": "-30%",
+        "cta": "Développez votre activité",
+        "features": ["Expérience immersive", "Pages illimitées", "Animations avancées", "Intégration 3D", "Support prioritaire"] 
+      }
+    ]
+  },
+  "monitor_modal": {
+    "title": "Gestion & Surveillance",
+    "items": [
+      { 
+        "title": "Basique", 
+        "popular": false,
+        "price": "20€ / mois",
+        "cta": "Activer la protection basique",
+        "features": ["Mises à jour de sécurité", "Mises à jour des plugins essentiels"] 
+      },
+      { 
+        "title": "Standard", 
+        "popular": true,
+        "popular_text": "Plus Populaire",
+        "price": "25€ / mois",
+        "cta": "Protéger votre site",
+        "features": ["Mises à jour de sécurité", "Mises à jour complètes des plugins", "Surveillance des temps d'arrêt"] 
+      },
+      { 
+        "title": "Premium", 
+        "popular": false,
+        "price": "35€ / mois",
+        "cta": "Obtenir une sécurité totale",
+        "features": ["Mises à jour de sécurité avancées", "Mises à jour plugins et thèmes", "Surveillance proactive", "Assistance 24/7"] 
       }
     ]
   },

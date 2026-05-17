@@ -4,6 +4,7 @@
   },
   "hero": {
     "badge": "Web Design & Development",
+    "badge_monitor": "Monitoring",
     "title": "The website you've <1>always dreamed of.</1>",
     "description": "I transform your ideas into a professional, fast website capable of attracting new customers."
   },
@@ -87,6 +88,66 @@
         "name": "Luca Verdi",
         "role": "Freelancer",
         "text": "Attention to detail and clean code are what sets him apart. Highly recommended for premium projects."
+      }
+    ]
+  },
+  "services_modal": {
+    "title": "My Services",
+    "items": [
+      { 
+        "title": "Basic", 
+        "popular": false,
+        "price": "149€", 
+        "original_price": "299€",
+        "discount": "-50%",
+        "cta": "Start Your Journey",
+        "features": ["Essential design", "Single-page site", "Mobile optimization", "Basic SEO"] 
+      },
+      { 
+        "title": "Standard", 
+        "popular": true,
+        "popular_text": "Most Popular",
+        "price": "239€", 
+        "original_price": "399€",
+        "discount": "-40%",
+        "cta": "Build Your Website",
+        "features": ["Custom design", "Up to 5 pages", "Optimized performance", "Advanced SEO", "Contact forms"] 
+      },
+      { 
+        "title": "Premium", 
+        "popular": false,
+        "price": "419€", 
+        "original_price": "599€",
+        "discount": "-30%",
+        "cta": "Scale Your Business",
+        "features": ["Immersive experience", "Unlimited pages", "Advanced animations", "3D integration", "Priority support"] 
+      }
+    ]
+  },
+  "monitor_modal": {
+    "title": "Management & Monitoring",
+    "items": [
+      { 
+        "title": "Basic", 
+        "popular": false,
+        "price": "20€ / month",
+        "cta": "Activate Basic Protection",
+        "features": ["Security updates", "Essential plugin updates"] 
+      },
+      { 
+        "title": "Standard", 
+        "popular": true,
+        "popular_text": "Most Popular",
+        "price": "25€ / month",
+        "cta": "Protect Your Website",
+        "features": ["Security updates", "Complete plugin updates", "Downtime monitoring"] 
+      },
+      { 
+        "title": "Premium", 
+        "popular": false,
+        "price": "35€ / month",
+        "cta": "Get Total Security",
+        "features": ["Advanced security updates", "Plugin & theme updates", "Proactive downtime monitoring", "24/7 Support"] 
       }
     ]
   },

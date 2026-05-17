@@ -4,6 +4,7 @@
   },
   "hero": {
     "badge": "Web Design & Sviluppo",
+    "badge_monitor": "Monitoraggio",
     "title": "Il sito che <1>hai sempre sognato.</1>",
     "description": "Trasformo le tue idee in un sito web professionale, veloce e capace di attirare nuovi clienti."
   },
@@ -87,6 +88,66 @@
         "name": "Luca Verdi",
         "role": "Freelancer",
         "text": "L'attenzione ai dettagli e la pulizia del codice sono ciò che lo distingue. Consigliatissimo per progetti premium."
+      }
+    ]
+  },
+  "services_modal": {
+    "title": "I Miei Servizi",
+    "items": [
+      { 
+        "title": "Base", 
+        "popular": false,
+        "price": "149€", 
+        "original_price": "299€",
+        "discount": "-50%",
+        "cta": "Inizia il tuo percorso",
+        "features": ["Design essenziale", "Sito monopagina", "Ottimizzazione mobile", "SEO di base"] 
+      },
+      { 
+        "title": "Normale", 
+        "popular": true,
+        "popular_text": "Più Popolare",
+        "price": "239€", 
+        "original_price": "399€",
+        "discount": "-40%",
+        "cta": "Crea il tuo Sito",
+        "features": ["Design personalizzato", "Fino a 5 pagine", "Performance ottimizzate", "SEO avanzata", "Moduli di contatto"] 
+      },
+      { 
+        "title": "Premium", 
+        "popular": false,
+        "price": "419€", 
+        "original_price": "599€",
+        "discount": "-30%",
+        "cta": "Scala il tuo Business",
+        "features": ["Esperienza immersiva", "Pagine illimitate", "Animazioni avanzate", "Integrazione 3D", "Supporto prioritario"] 
+      }
+    ]
+  },
+  "monitor_modal": {
+    "title": "Gestione e Monitoraggio",
+    "items": [
+      { 
+        "title": "Base", 
+        "popular": false,
+        "price": "20€ / mese",
+        "cta": "Attiva Protezione Base",
+        "features": ["Aggiornamenti di sicurezza", "Aggiornamento plugin essenziali"] 
+      },
+      { 
+        "title": "Normale", 
+        "popular": true,
+        "popular_text": "Più Popolare",
+        "price": "25€ / mese",
+        "cta": "Proteggi il tuo Sito",
+        "features": ["Aggiornamenti di sicurezza", "Aggiornamento plugin completi", "Monitoraggio eventuali blocchi"] 
+      },
+      { 
+        "title": "Premium", 
+        "popular": false,
+        "price": "35€ / mese",
+        "cta": "Ottieni Sicurezza Totale",
+        "features": ["Aggiornamenti di sicurezza avanzati", "Aggiornamento plugin e temi", "Monitoraggio eventuali blocchi", "Assistenza 24/7"] 
       }
     ]
   },

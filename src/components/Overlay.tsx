@@ -1,9 +1,11 @@
-import { Mail, MapPin, MessageCircle, Code, Layout, Wind, Cpu, Atom, Terminal, Palette, Gauge, CheckCircle2, Loader2 } from 'lucide-react'
+import { Mail, MapPin, MessageCircle, Code, Layout, Wind, Cpu, Atom, Terminal, Palette, Gauge, CheckCircle2, Loader2, Database } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
 import { useState } from 'react'
 import LegalModal from './LegalModal'
 import CookieBanner from './CookieBanner'
+import ServicesModal from './ServicesModal'
+import MonitorModal from './MonitorModal'
 
 // EmailJS Configuration from .env
 const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID
@@ -15,6 +17,8 @@ export default function Overlay() {
   const [email, setEmail] = useState('')
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
   const [legalType, setLegalType] = useState<'privacy' | 'cookie' | 'terms' | null>(null)
+  const [isServicesOpen, setIsServicesOpen] = useState(false)
+  const [isMonitorOpen, setIsMonitorOpen] = useState(false)
   
   const currentLang = i18n.language?.split('-')[0] || 'it'
 
@@ -62,12 +66,31 @@ export default function Overlay() {
     show: { opacity: 1, y: 0 }
   }
 
-  const stack = [
-    { name: 'HTML', icon: <Code size={24} />, label: 'HTML5' },
-    { name: 'CSS', icon: <Layout size={24} />, label: 'CSS3' },
-    { name: 'Tailwind', icon: <Wind size={24} />, label: 'Tailwind CSS' },
-    { name: 'JS', icon: <Cpu size={24} />, label: 'JavaScript' },
-    { name: 'React', icon: <Atom size={24} />, label: 'React' }
+  const stackCategories = [
+    {
+      title: 'Frontend',
+      items: [
+        { name: 'HTML', icon: <Code size={24} />, label: 'HTML5' },
+        { name: 'CSS', icon: <Layout size={24} />, label: 'CSS3' },
+        { name: 'Tailwind', icon: <Wind size={24} />, label: 'Tailwind CSS' },
+        { name: 'JS', icon: <Cpu size={24} />, label: 'JavaScript' },
+        { name: 'React', icon: <Atom size={24} />, label: 'React' }
+      ]
+    },
+    {
+      title: 'Backend',
+      items: [
+        { name: 'Python', icon: <Terminal size={24} />, label: 'Python' },
+        { name: 'Node.js', icon: <Cpu size={24} />, label: 'Node.js' }
+      ]
+    },
+    {
+      title: 'Database',
+      items: [
+        { name: 'MySQL', icon: <Database size={24} />, label: 'MySQL' },
+        { name: 'Oracle', icon: <Database size={24} />, label: 'Oracle' }
+      ]
+    }
   ]
 
   const values = [
@@ -122,7 +145,25 @@ export default function Overlay() {
 
       <main className="hero">
         <motion.div variants={container} initial="hidden" animate="show">
-          <motion.div variants={item} className="badge">{t('hero.badge')}</motion.div>
+          <motion.div variants={item} style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+            <div 
+              className="badge clickable-badge"
+              onClick={() => setIsServicesOpen(true)}
+              role="button"
+              tabIndex={0}
+            >
+              {t('hero.badge')}
+            </div>
+            <div 
+              className="badge clickable-badge monitor-badge"
+              onClick={() => setIsMonitorOpen(true)}
+              role="button"
+              tabIndex={0}
+              style={{ background: 'rgba(168, 85, 247, 0.15)', borderColor: 'rgba(168, 85, 247, 0.3)' }}
+            >
+              {t('hero.badge_monitor')}
+            </div>
+          </motion.div>
           <motion.h1 variants={item}>
             {(() => {
               const title = t('hero.title')
@@ -180,16 +221,23 @@ export default function Overlay() {
             </div>
             <p className="section-description">{t('stack.description')}</p>
           </div>
-          <div className="stack-grid">
-            {stack.map((item, i) => (
-              <motion.div 
-                key={i}
-                className="stack-card"
-                whileHover={{ y: -5, borderColor: '#6366f1' }}
-              >
-                <div className="stack-icon">{item.icon}</div>
-                <div className="stack-name">{item.name}</div>
-              </motion.div>
+          <div className="stack-container" style={{ display: 'flex', flexDirection: 'column', gap: '3rem' }}>
+            {stackCategories.map((category, catIndex) => (
+              <div key={catIndex} className="stack-category">
+                <h3 style={{ fontSize: '1.5rem', marginBottom: '1.5rem', color: 'var(--text)', borderBottom: '1px solid var(--glass-border)', paddingBottom: '0.5rem' }}>{category.title}</h3>
+                <div className="stack-grid">
+                  {category.items.map((item, i) => (
+                    <motion.div 
+                      key={i}
+                      className="stack-card"
+                      whileHover={{ y: -5, borderColor: '#6366f1' }}
+                    >
+                      <div className="stack-icon">{item.icon}</div>
+                      <div className="stack-name">{item.name}</div>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
             ))}
           </div>
         </motion.section>
@@ -369,6 +417,14 @@ export default function Overlay() {
         isOpen={!!legalType} 
         onClose={() => setLegalType(null)} 
         type={legalType} 
+      />
+      <ServicesModal 
+        isOpen={isServicesOpen} 
+        onClose={() => setIsServicesOpen(false)} 
+      />
+      <MonitorModal 
+        isOpen={isMonitorOpen} 
+        onClose={() => setIsMonitorOpen(false)} 
       />
       <CookieBanner />
     </div>
