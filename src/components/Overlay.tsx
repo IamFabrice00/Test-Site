@@ -1,4 +1,4 @@
-import { Mail, MapPin, MessageCircle, Code, Layout, Wind, Cpu, Atom, Terminal, Palette, Gauge, CheckCircle2, Loader2, Database } from 'lucide-react'
+import { Mail, MapPin, MessageCircle, Code, Layout, Wind, Cpu, Atom, Terminal, Palette, Gauge, CheckCircle2, Loader2, Database, Phone, Calendar, ExternalLink } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
 import { useState } from 'react'
@@ -180,6 +180,21 @@ export default function Overlay() {
           <motion.p variants={item}>
             {t('hero.description')}
           </motion.p>
+
+          {/* Quick-contact strip — SOPRA LA PIEGA */}
+          <motion.div variants={item} className="quick-contact-strip">
+            <a href="https://wa.me/393519877057" target="_blank" rel="noopener noreferrer" className="quick-contact-item">
+              <MessageCircle size={16} />
+              <span>+39 351 987 7057</span>
+            </a>
+            <div className="quick-contact-divider" />
+            <a href="mailto:fabrice.logon@testsitelab.it" className="quick-contact-item">
+              <Mail size={16} />
+              <span>fabrice.logon@testsitelab.it</span>
+            </a>
+            <div className="quick-contact-divider" />
+            <span className="quick-contact-free">✦ Consulenza gratuita</span>
+          </motion.div>
 
           <motion.div variants={item} className="contact-card">
             <div className="contact-item">
@@ -423,6 +438,43 @@ export default function Overlay() {
         onClose={() => setIsMonitorOpen(false)} 
       />
       <CookieBanner />
+
+      {/* ===== FIXED BOTTOM CTA BAR ===== */}
+      <motion.div
+        className="fixed-cta-bar"
+        initial={{ y: 100, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ delay: 1.2, duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
+      >
+        <div className="fixed-cta-inner">
+          <div className="fixed-cta-left">
+            <Phone size={16} className="fixed-cta-pulse" />
+            <span>Disponibile oggi</span>
+          </div>
+          <div className="fixed-cta-actions">
+            <a
+              href="https://wa.me/393519877057?text=Ciao%20Fabrice%2C%20vorrei%20prenotare%20una%20call%20gratuita!"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="fixed-cta-primary"
+            >
+              <Calendar size={16} />
+              Prenota una call gratuita
+            </a>
+            <a
+              href="#portfolio"
+              className="fixed-cta-secondary"
+              onClick={(e) => {
+                e.preventDefault()
+                document.querySelector('.portfolio-grid')?.scrollIntoView({ behavior: 'smooth' })
+              }}
+            >
+              <ExternalLink size={14} />
+              Guarda i progetti
+            </a>
+          </div>
+        </div>
+      </motion.div>
     </div>
   )
 }
