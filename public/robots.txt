@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Blocca cartelle inutili per i crawler
+Disallow: /api/
+Disallow: /_next/
+Disallow: /node_modules/
+
+# Sitemap
+Sitemap: https://testsitelab.it/sitemap.xml
