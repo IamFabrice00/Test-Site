@@ -51,10 +51,10 @@
     "description": "A selection of my most recent works, where design meets cutting-edge technology.",
     "projects": [
       {
-        "title": "Smart Eat .space",
-        "category": "Wellness & AI App",
-        "desc": "A sensory journey into nutrition, where AI meets wellness through fluid, organic animations.",
-        "link": "https://smarteat.space"
+        "title": "Dalla Francesca",
+        "category": "Restaurant & Event Venue",
+        "desc": "A refined digital dining experience combining visual elegance, interactive menus, and seamless online booking.",
+        "link": "https://fabricetest.site/"
       },
       {
         "title": "Coach NG",
@@ -67,6 +67,12 @@
         "category": "3D Portfolio",
         "desc": "Immersive showcase site with 3D animation and optimized performance.",
         "link": "https://testsitelab.it"
+      },
+      {
+        "title": "Biancamaria Longoni",
+        "category": "Visual Art & Archive",
+        "desc": "A contemporary digital archive for a visual artist, highlighting conceptual works and installations with a sleek, immersive gallery layout.",
+        "link": "https://biancamarialongoni.space/"
       }
     ]
   },
@@ -179,9 +185,10 @@
     "chi_sono_location": "Milan, Italy",
     "servizi_title": "Services & Rates",
     "servizi_desc": "Tailored solutions designed for your digital growth. From corporate landing pages to immersive 3D web applications.",
-    "servizi_cta": "Explore full packages",
+    "servizi_cta": "View Rates",
     "portfolio_title": "Selected Portfolio",
     "portfolio_desc": "Click on any project to view its details directly here on the website.",
+    "scroll_to_portfolio": "Go to Portfolio",
     "blog_title": "Test Site Blog & Insights",
     "blog_desc": "Exclusive articles and guides on 3D development, SEO strategies, and the latest web design trends.",
     "blog_read_more": "Read Article",

@@ -51,10 +51,10 @@
     "description": "Una selezione dei miei lavori più recenti, dove il design incontra la tecnologia d'avanguardia.",
     "projects": [
       {
-        "title": "Smart Eat .space",
-        "category": "App Wellness & AI",
-        "desc": "Un viaggio sensoriale nel mondo della nutrizione, dove l'intelligenza artificiale incontra il benessere attraverso animazioni fluide e organiche.",
-        "link": "https://smarteat.space"
+        "title": "Dalla Francesca",
+        "category": "Ristorante & Ricevimenti",
+        "desc": "Un'esperienza gastronomica digitale raffinata, che unisce eleganza visiva, menu interattivo e prenotazioni online semplificate.",
+        "link": "https://fabricetest.site/"
       },
       {
         "title": "Coach NG",
@@ -67,6 +67,12 @@
         "category": "Portfolio 3D",
         "desc": "Sito vetrina immersivo con animazione 3D e performance ottimizzate.",
         "link": "https://testsitelab.it"
+      },
+      {
+        "title": "Biancamaria Longoni",
+        "category": "Archivio Visivo & Arte",
+        "desc": "Un archivio digitale contemporaneo per un'artista visiva, che mette in risalto opere e installazioni concettuali con una galleria immersiva e minimalista.",
+        "link": "https://biancamarialongoni.space/"
       }
     ]
   },
@@ -179,9 +185,10 @@
     "chi_sono_location": "Milano, Italia",
     "servizi_title": "Servizi & Tariffe",
     "servizi_desc": "Soluzioni su misura progettate per la tua crescita digitale. Dai siti aziendali alle esperienze 3D avanzate.",
-    "servizi_cta": "Esplora pacchetti completi",
+    "servizi_cta": "Vedi Tariffe",
     "portfolio_title": "Portfolio Selezionato",
     "portfolio_desc": "Clicca su uno dei progetti per visualizzarlo in dettaglio direttamente sul sito.",
+    "scroll_to_portfolio": "Vai al Portfolio",
     "blog_title": "Test Site Blog & Insights",
     "blog_desc": "Articoli e guide esclusive su sviluppo 3D, ottimizzazione SEO e le ultime tendenze del web design.",
     "blog_read_more": "Leggi Articolo",

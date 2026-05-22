@@ -2147,12 +2147,15 @@ h1, h2, h3 {
 }
 
 .form-submit-btn {
-  width: 100%;
-  padding: 1.1rem !important;
-  font-size: 1rem !important;
+  width: fit-content;
+  min-width: 220px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0.85rem 2.2rem !important;
+  font-size: 0.95rem !important;
   font-weight: 600;
-  border-radius: 14px !important;
-  margin-top: 1rem;
+  border-radius: 12px !important;
+  margin-top: 1.25rem;
   display: flex;
   align-items: center;
   justify-content: center;

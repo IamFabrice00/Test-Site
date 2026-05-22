@@ -51,22 +51,28 @@
     "description": "Une sélection de mes travaux les plus récents, où le design rencontre la technologie de pointe.",
     "projects": [
       {
-        "title": "Smart Eat .space",
-        "category": "App Bien-être & IA",
-        "desc": "Un voyage sensoriel dans la nutrition, où l'IA rencontre le bien-être grâce à des animations fluides et organiques.",
-        "link": "https://smarteat.space"
+        "title": "Dalla Francesca",
+        "category": "Restaurant & Réceptions",
+        "desc": "Une expérience gastronomique digitale raffinée, alliant élégance visuelle, menu interactif et réservations en ligne.",
+        "link": "https://fabricetest.site/"
       },
       {
         "title": "Coach NG",
         "category": "Application Web",
-        "desc": "Votre compagnon fitness digital : suivez vos entraînements et atteignez vos objectifs avec un coach personnel dédié.",
+        "desc": "Votre compagnon fitness digital : suivez vos entraînements et atteignez vos objectifs avec un coach dédié.",
         "link": "https://fabricetest.site"
       },
       {
         "title": "Test Site Lab",
         "category": "Portfolio 3D",
-        "desc": "Site vitrine immersivo avec animation 3D et performances optimisées.",
+        "desc": "Site vitrine immersif avec des animations 3D et des performances optimisées.",
         "link": "https://testsitelab.it"
+      },
+      {
+        "title": "Biancamaria Longoni",
+        "category": "Art Visuel & Archive",
+        "desc": "Un archive numérique contemporain pour une artiste visuelle, mettant en valeur des œuvres conceptuelles à travers une galerie immersive et minimaliste.",
+        "link": "https://biancamarialongoni.space/"
       }
     ]
   },
@@ -179,9 +185,10 @@
     "chi_sono_location": "Milan, Italie",
     "servizi_title": "Services & Tarifs",
     "servizi_desc": "Des solutions sur mesure conçues pour votre croissance numérique. Des sites d'entreprise aux applications web 3D immersives.",
-    "servizi_cta": "Explorer nos forfaits complets",
+    "servizi_cta": "Voir les Tarifs",
     "portfolio_title": "Portfolio Sélectionné",
     "portfolio_desc": "Cliquez sur l'un des projets pour voir ses détails directement ici sur le site.",
+    "scroll_to_portfolio": "Voir le Portfolio",
     "blog_title": "Test Site Blog & Insights",
     "blog_desc": "Articles et guides exclusifs sur le développement 3D, l'optimisation SEO et les dernières tendances du web design.",
     "blog_read_more": "Lire l'article",
