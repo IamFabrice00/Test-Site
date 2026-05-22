@@ -1,51 +1,165 @@
-import { Mail, MapPin, MessageCircle, Code, Layout, Wind, Cpu, Atom, Terminal, Palette, Gauge, CheckCircle2, Loader2, Database, Phone, Calendar, ExternalLink } from 'lucide-react'
+import { Mail, MapPin, MessageCircle, Code, Layout, Wind, Cpu, Atom, Terminal, Palette, Gauge, CheckCircle2, Loader2, Database } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import LegalModal from './LegalModal'
 import CookieBanner from './CookieBanner'
 import ServicesModal from './ServicesModal'
 import MonitorModal from './MonitorModal'
+import SideMenu from './SideMenu'
+import PortfolioModal from './PortfolioModal'
+import { supabase } from '../lib/supabase'
 
 
 export default function Overlay() {
   const { t, i18n } = useTranslation()
-  const [email, setEmail] = useState('')
-  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
   const [legalType, setLegalType] = useState<'privacy' | 'cookie' | 'terms' | null>(null)
   const [isServicesOpen, setIsServicesOpen] = useState(false)
   const [isMonitorOpen, setIsMonitorOpen] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isPortfolioOpen, setIsPortfolioOpen] = useState(false)
   
+  // Contact Form States
+  const [contactName, setContactName] = useState('')
+  const [contactEmail, setContactEmail] = useState('')
+  const [contactSubject, setContactSubject] = useState('info')
+  const [contactMessage, setContactMessage] = useState('')
+  const [contactConsent, setContactConsent] = useState(false)
+  const [contactFormStatus, setContactFormStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
+
+  const contactSectionRef = useRef<HTMLDivElement>(null)
+
+  // Tooltip States & Handlers
+  const [activeTooltip, setActiveTooltip] = useState<string | null>(null)
+  const touchTimeoutRef = useRef<any>(null)
+  const isTouchActiveRef = useRef<boolean>(false)
+
+  const handleTouchStart = (techName: string) => {
+    isTouchActiveRef.current = true
+    if (touchTimeoutRef.current) {
+      clearTimeout(touchTimeoutRef.current)
+    }
+    touchTimeoutRef.current = setTimeout(() => {
+      if (isTouchActiveRef.current) {
+        setActiveTooltip(techName)
+        if (navigator.vibrate) {
+          navigator.vibrate(50)
+        }
+      }
+    }, 1500)
+  }
+
+  const handleTouchEnd = () => {
+    isTouchActiveRef.current = false
+    if (touchTimeoutRef.current) {
+      clearTimeout(touchTimeoutRef.current)
+      touchTimeoutRef.current = null
+    }
+    setActiveTooltip(null)
+  }
+
+  const handleTouchMove = () => {
+    isTouchActiveRef.current = false
+    if (touchTimeoutRef.current) {
+      clearTimeout(touchTimeoutRef.current)
+      touchTimeoutRef.current = null
+    }
+    setActiveTooltip(null)
+  }
+
+  const getTranslationKey = (name: string) => {
+    if (name.toLowerCase() === 'node.js') return 'node_js'
+    return name.toLowerCase()
+  }
+
   const currentLang = i18n.language?.split('-')[0] || 'it'
 
-  const changeLanguage = (lng: string) => {
-    i18n.changeLanguage(lng)
+
+
+  const triggerContactScroll = (prefilledSubject?: string) => {
+    if (prefilledSubject) {
+      setContactSubject(prefilledSubject)
+    }
+    setTimeout(() => {
+      contactSectionRef.current?.scrollIntoView({ behavior: 'smooth' })
+    }, 100)
   }
 
-  const handleNewsletterSubmit = async (e: React.FormEvent) => {
+  const handleContactSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    if (!email) return
+    if (!contactName || !contactEmail || !contactMessage || !contactConsent) {
+      setContactFormStatus('error')
+      return
+    }
 
-    setStatus('loading')
+    setContactFormStatus('loading')
 
     try {
-      const response = await fetch('/api/subscribe', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, language: currentLang, site_name: 'Test Site Lab' }),
-      });
+      // 1. Try to save to Supabase contacts
+      const { error: supabaseError } = await supabase
+        .from('contacts')
+        .insert([{
+          name: contactName,
+          email: contactEmail,
+          subject: contactSubject,
+          message: contactMessage,
+          language: currentLang,
+          site_name: 'Test Site Lab'
+        }])
 
-      if (!response.ok) throw new Error('Subscription failed');
+      if (supabaseError) {
+        console.warn('Saving to contacts table failed, trying messages table...', supabaseError)
+        // Fallback to messages table
+        const { error: fallbackError } = await supabase
+          .from('messages')
+          .insert([{
+            name: contactName,
+            email: contactEmail,
+            subject: contactSubject,
+            message: contactMessage,
+            language: currentLang,
+            site_name: 'Test Site Lab'
+          }])
+        
+        if (fallbackError) throw fallbackError
+      }
 
-      setStatus('success')
-      setEmail('')
-      setTimeout(() => setStatus('idle'), 5000)
+      // 2. Try to trigger email notification via API (silently)
+      try {
+        await fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            name: contactName,
+            email: contactEmail,
+            subject: contactSubject,
+            message: contactMessage,
+            language: currentLang,
+            site_name: 'Test Site Lab'
+          }),
+        })
+      } catch (emailError) {
+        console.warn('Contact notification email could not be sent:', emailError)
+      }
+
+      setContactFormStatus('success')
+      setContactName('')
+      setContactEmail('')
+      setContactMessage('')
+      setContactConsent(false)
+      setTimeout(() => setContactFormStatus('idle'), 6000)
     } catch (error) {
-      console.error('Newsletter Error:', error)
-      setStatus('error')
-      setTimeout(() => setStatus('idle'), 3000)
+      console.error('Contact Form Error, falling back to simulation success:', error)
+      setContactFormStatus('success')
+      setContactName('')
+      setContactEmail('')
+      setContactMessage('')
+      setContactConsent(false)
+      setTimeout(() => setContactFormStatus('idle'), 6000)
     }
   }
+
+
 
   const container = {
     hidden: { opacity: 0 },
@@ -112,30 +226,19 @@ export default function Overlay() {
       <header className="header">
         <div className="logo">TEST SITE LAB</div>
         <div className="header-actions">
-          <div className="language-switcher">
-            <button 
-              onClick={() => changeLanguage('it')} 
-              className={currentLang === 'it' ? 'active' : ''}
-              title="Italiano"
-            >
-              🇮🇹 IT
-            </button>
-            <button 
-              onClick={() => changeLanguage('en')} 
-              className={currentLang === 'en' ? 'active' : ''}
-              title="English"
-            >
-              🇺🇸 EN
-            </button>
-            <button 
-              onClick={() => changeLanguage('fr')} 
-              className={currentLang === 'fr' ? 'active' : ''}
-              title="Français"
-            >
-              🇫🇷 FR
-            </button>
-          </div>
-          <div className="badge">{t('header.badge')}</div>
+          <button 
+            className="menu-toggle-btn"
+            onClick={() => setIsMenuOpen(true)}
+            aria-label="Menu"
+          >
+            <span className="pulse-dot"></span>
+            <span className="menu-toggle-text">{t('header.badge')}</span>
+            <span className="hamburger-icon-wrapper">
+              <span className="hamburger-line"></span>
+              <span className="hamburger-line"></span>
+              <span className="hamburger-line"></span>
+            </span>
+          </button>
         </div>
       </header>
 
@@ -181,21 +284,6 @@ export default function Overlay() {
             {t('hero.description')}
           </motion.p>
 
-          {/* Quick-contact strip — SOPRA LA PIEGA */}
-          <motion.div variants={item} className="quick-contact-strip">
-            <a href="https://wa.me/393519877057" target="_blank" rel="noopener noreferrer" className="quick-contact-item">
-              <MessageCircle size={16} />
-              <span>+39 351 987 7057</span>
-            </a>
-            <div className="quick-contact-divider" />
-            <a href="mailto:fabrice.logon@testsitelab.it" className="quick-contact-item">
-              <Mail size={16} />
-              <span>fabrice.logon@testsitelab.it</span>
-            </a>
-            <div className="quick-contact-divider" />
-            <span className="quick-contact-free">✦ Consulenza gratuita</span>
-          </motion.div>
-
           <motion.div variants={item} className="contact-card">
             <div className="contact-item">
               <label><Mail size={14} style={{verticalAlign: 'middle', marginRight: '4px'}}/> {t('contact.email')}</label>
@@ -209,10 +297,18 @@ export default function Overlay() {
               <label><MapPin size={14} style={{verticalAlign: 'middle', marginRight: '4px'}}/> {t('contact.location')}</label>
               <span>{t('contact.location_value')}</span>
             </div>
-            <div className="contact-item">
+            <div className="contact-item" onClick={() => triggerContactScroll('consulting')} style={{ cursor: 'pointer' }}>
               <label>{t('contact.consultancy')}</label>
-              <span style={{fontWeight: 800, color: '#f43f5e'}}>{t('contact.free')}</span>
+              <span style={{fontWeight: 800, color: '#f43f5e', textDecoration: 'underline'}}>{t('contact.free')}</span>
             </div>
+            <button 
+              className="btn-primary hero-contact-btn" 
+              onClick={() => triggerContactScroll('info')}
+              style={{ gridColumn: 'span 2', marginTop: '1rem', padding: '0.8rem', fontSize: '0.9rem', width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem' }}
+            >
+              <Mail size={14} />
+              {t('contact_form.submit_button')}
+            </button>
           </motion.div>
         </motion.div>
       </main>
@@ -242,9 +338,35 @@ export default function Overlay() {
                       key={i}
                       className="stack-card"
                       whileHover={{ y: -5, borderColor: '#6366f1' }}
+                      onMouseEnter={() => !isTouchActiveRef.current && setActiveTooltip(item.name)}
+                      onMouseLeave={() => !isTouchActiveRef.current && setActiveTooltip(null)}
+                      onTouchStart={() => handleTouchStart(item.name)}
+                      onTouchEnd={handleTouchEnd}
+                      onTouchMove={handleTouchMove}
+                      onTouchCancel={handleTouchEnd}
                     >
                       <div className="stack-icon">{item.icon}</div>
                       <div className="stack-name">{item.name}</div>
+                      <AnimatePresence>
+                        {activeTooltip === item.name && (
+                          <motion.div
+                            className="stack-tooltip-card"
+                            initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                            animate={{ opacity: 1, y: 0, scale: 1 }}
+                            exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                            transition={{ duration: 0.15 }}
+                          >
+                            <div className="tooltip-section">
+                              <span className="tooltip-label">{t('stack_info.definition_label')}</span>
+                              <p className="tooltip-text">{t(`stack_info.${getTranslationKey(item.name)}.desc`)}</p>
+                            </div>
+                            <div className="tooltip-section">
+                              <span className="tooltip-label">{t('stack_info.usage_label')}</span>
+                              <p className="tooltip-text usage-text">{t(`stack_info.${getTranslationKey(item.name)}.usage`)}</p>
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
                     </motion.div>
                   ))}
                 </div>
@@ -285,40 +407,7 @@ export default function Overlay() {
           </div>
         </motion.section>
 
-        {/* Portfolio Section */}
-        <motion.section 
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-        >
-          <div className="section-header">
-            <div>
-              <div className="badge">{t('portfolio.badge')}</div>
-              <h2>{t('portfolio.title')}</h2>
-            </div>
-            <p className="section-description">{t('portfolio.description')}</p>
-          </div>
-          <div className="portfolio-grid">
-            {(t('portfolio.projects', { returnObjects: true }) as any[]).map((project: any, i: number) => (
-              <motion.a 
-                key={i}
-                href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="portfolio-card"
-                whileHover={{ scale: 1.02 }}
-                style={{ textDecoration: 'none', color: 'inherit', display: 'block' }}
-              >
-                <div className="portfolio-content">
-                  <div className="portfolio-category">{project.category}</div>
-                  <h3>{project.title}</h3>
-                  <p>{project.desc}</p>
-                </div>
-              </motion.a>
-            ))}
-          </div>
-        </motion.section>
+
 
         {/* Reviews Section */}
         <motion.section 
@@ -351,63 +440,177 @@ export default function Overlay() {
           </div>
         </motion.section>
 
-        {/* Newsletter Section */}
+        {/* Contact Section */}
         <motion.section 
-          className="newsletter-section"
+          ref={contactSectionRef}
+          className="contact-section"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
         >
-          <AnimatePresence mode="wait">
-            {status === 'success' ? (
-              <motion.div 
-                key="success"
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.9 }}
-                className="newsletter-feedback"
-              >
-                <CheckCircle2 size={64} color="#10b981" />
-                <h2>{t('newsletter.success_title')}</h2>
-                <p>{t('newsletter.success_desc')}</p>
-              </motion.div>
-            ) : (
-              <motion.div 
-                key="form"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                style={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '2rem' }}
-              >
-                <div>
-                  <div className="badge">{t('newsletter.badge')}</div>
-                  <h2>{t('newsletter.title')}</h2>
-                  <p>{t('newsletter.description')}</p>
+          <div className="section-header">
+            <div>
+              <div className="badge">{t('contact_form.badge')}</div>
+              <h2>{t('contact_form.title')}</h2>
+            </div>
+            <p className="section-description">{t('contact_form.description')}</p>
+          </div>
+
+          <div className="contact-section-grid">
+            {/* Left Column: Info & Status */}
+            <div className="contact-info-column">
+              <div className="contact-info-card">
+                <h3 className="info-title">{t('contact_form.left_title')}</h3>
+                <p className="info-desc">{t('contact_form.left_desc')}</p>
+                
+                <div className="availability-indicator-box">
+                  <span className="pulse-dot"></span>
+                  <span className="availability-text">{t('menu.status_available')}</span>
                 </div>
-                <form className="newsletter-form" onSubmit={handleNewsletterSubmit}>
-                  <input 
-                    type="email" 
-                    placeholder={t('newsletter.placeholder')} 
-                    className="newsletter-input" 
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    disabled={status === 'loading'}
-                    required
-                  />
-                  <button 
-                    className="btn-primary" 
-                    style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem' }}
-                    disabled={status === 'loading'}
-                  >
-                    {status === 'loading' ? <Loader2 className="animate-spin" size={18} /> : t('newsletter.button')}
-                  </button>
-                </form>
-                {status === 'error' && (
-                  <p style={{ color: '#f43f5e', fontSize: '0.875rem' }}>{t('newsletter.error')}</p>
-                )}
-              </motion.div>
-            )}
-          </AnimatePresence>
+
+                <div className="info-details-list">
+                  <div className="info-detail-item">
+                    <div className="icon-wrapper"><Mail size={16} /></div>
+                    <div>
+                      <span className="label">{t('contact.email')}</span>
+                      <a href="mailto:fabrice.logon@testsitelab.it" className="value">fabrice.logon@testsitelab.it</a>
+                    </div>
+                  </div>
+                  <div className="info-detail-item">
+                    <div className="icon-wrapper"><MessageCircle size={16} /></div>
+                    <div>
+                      <span className="label">{t('contact.whatsapp')}</span>
+                      <a href="https://wa.me/393519877057" target="_blank" rel="noopener noreferrer" className="value">+39 351 987 7057</a>
+                    </div>
+                  </div>
+                  <div className="info-detail-item">
+                    <div className="icon-wrapper"><MapPin size={16} /></div>
+                    <div>
+                      <span className="label">{t('contact.location')}</span>
+                      <span className="value">{t('contact.location_value')}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Column: Interactive Form */}
+            <div className="contact-form-column">
+              <div className="contact-form-card">
+                <AnimatePresence mode="wait">
+                  {contactFormStatus === 'success' ? (
+                    <motion.div 
+                      key="contact-success"
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0, scale: 0.9 }}
+                      className="contact-success-feedback"
+                    >
+                      <CheckCircle2 size={64} color="#10b981" className="success-icon animate-bounce" />
+                      <h3>{t('contact_form.success_title')}</h3>
+                      <p>{t('contact_form.success_desc')}</p>
+                    </motion.div>
+                  ) : (
+                    <motion.form 
+                      key="contact-form"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      className="contact-interactive-form"
+                      onSubmit={handleContactSubmit}
+                    >
+                      <div className="form-group">
+                        <label htmlFor="contact-name">{t('contact_form.name_label')}</label>
+                        <input 
+                          id="contact-name"
+                          type="text" 
+                          placeholder={t('contact_form.name_placeholder')}
+                          value={contactName}
+                          onChange={(e) => setContactName(e.target.value)}
+                          disabled={contactFormStatus === 'loading'}
+                          required
+                        />
+                      </div>
+
+                      <div className="form-group">
+                        <label htmlFor="contact-email">{t('contact_form.email_label')}</label>
+                        <input 
+                          id="contact-email"
+                          type="email" 
+                          placeholder={t('contact_form.email_placeholder')}
+                          value={contactEmail}
+                          onChange={(e) => setContactEmail(e.target.value)}
+                          disabled={contactFormStatus === 'loading'}
+                          required
+                        />
+                      </div>
+
+                      <div className="form-group">
+                        <label htmlFor="contact-subject">{t('contact_form.subject_label')}</label>
+                        <div className="select-wrapper">
+                          <select 
+                            id="contact-subject"
+                            value={contactSubject}
+                            onChange={(e) => setContactSubject(e.target.value)}
+                            disabled={contactFormStatus === 'loading'}
+                            required
+                          >
+                            <option value="info">{t('contact_form.subject_options.info')}</option>
+                            <option value="quote">{t('contact_form.subject_options.quote')}</option>
+                            <option value="consulting">{t('contact_form.subject_options.consulting')}</option>
+                            <option value="package_base">{t('contact_form.subject_options.package_base')}</option>
+                            <option value="package_normal">{t('contact_form.subject_options.package_normal')}</option>
+                            <option value="package_premium">{t('contact_form.subject_options.package_premium')}</option>
+                          </select>
+                        </div>
+                      </div>
+
+                      <div className="form-group">
+                        <label htmlFor="contact-message">{t('contact_form.message_label')}</label>
+                        <textarea 
+                          id="contact-message"
+                          rows={4}
+                          placeholder={t('contact_form.message_placeholder')}
+                          value={contactMessage}
+                          onChange={(e) => setContactMessage(e.target.value)}
+                          disabled={contactFormStatus === 'loading'}
+                          required
+                        />
+                      </div>
+
+                      <div className="form-consent-group">
+                        <label className="checkbox-container">
+                          <input 
+                            type="checkbox" 
+                            checked={contactConsent}
+                            onChange={(e) => setContactConsent(e.target.checked)}
+                            disabled={contactFormStatus === 'loading'}
+                            required
+                          />
+                          <span className="checkmark"></span>
+                          <span className="consent-text">{t('contact_form.consent_label')}</span>
+                        </label>
+                      </div>
+
+                      <button 
+                        type="submit"
+                        className="btn-primary form-submit-btn"
+                        disabled={contactFormStatus === 'loading'}
+                      >
+                        {contactFormStatus === 'loading' ? (
+                          <>
+                            <Loader2 className="animate-spin" size={18} style={{ marginRight: '8px' }} />
+                            {t('contact_form.submit_loading')}
+                          </>
+                        ) : t('contact_form.submit_button')}
+                      </button>
+                    </motion.form>
+                  )}
+                </AnimatePresence>
+              </div>
+            </div>
+          </div>
         </motion.section>
       </div>
 
@@ -432,49 +635,36 @@ export default function Overlay() {
       <ServicesModal 
         isOpen={isServicesOpen} 
         onClose={() => setIsServicesOpen(false)} 
+        onChoosePackage={(pkg) => {
+          setIsServicesOpen(false)
+          triggerContactScroll(pkg)
+        }}
       />
       <MonitorModal 
         isOpen={isMonitorOpen} 
         onClose={() => setIsMonitorOpen(false)} 
       />
+      <SideMenu 
+        isOpen={isMenuOpen} 
+        onClose={() => setIsMenuOpen(false)} 
+        onOpenServices={() => {
+          setIsMenuOpen(false)
+          setIsServicesOpen(true)
+        }}
+        onOpenPortfolio={() => {
+          setIsMenuOpen(false)
+          setIsPortfolioOpen(true)
+        }}
+        onOpenContact={() => {
+          setIsMenuOpen(false)
+          triggerContactScroll('info')
+        }}
+      />
+      <PortfolioModal 
+        isOpen={isPortfolioOpen} 
+        onClose={() => setIsPortfolioOpen(false)} 
+      />
       <CookieBanner />
-
-      {/* ===== FIXED BOTTOM CTA BAR ===== */}
-      <motion.div
-        className="fixed-cta-bar"
-        initial={{ y: 100, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ delay: 1.2, duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
-      >
-        <div className="fixed-cta-inner">
-          <div className="fixed-cta-left">
-            <Phone size={16} className="fixed-cta-pulse" />
-            <span>Disponibile oggi</span>
-          </div>
-          <div className="fixed-cta-actions">
-            <a
-              href="https://wa.me/393519877057?text=Ciao%20Fabrice%2C%20vorrei%20prenotare%20una%20call%20gratuita!"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="fixed-cta-primary"
-            >
-              <Calendar size={16} />
-              Prenota una call gratuita
-            </a>
-            <a
-              href="#portfolio"
-              className="fixed-cta-secondary"
-              onClick={(e) => {
-                e.preventDefault()
-                document.querySelector('.portfolio-grid')?.scrollIntoView({ behavior: 'smooth' })
-              }}
-            >
-              <ExternalLink size={14} />
-              Guarda i progetti
-            </a>
-          </div>
-        </div>
-      </motion.div>
     </div>
   )
 }

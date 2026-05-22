@@ -93,6 +93,10 @@
   },
   "services_modal": {
     "title": "Mes Services",
+    "one_time_label": "Paiement Unique",
+    "monthly_label": "Mensualités (max 6 mois)",
+    "one_time_note": "unique",
+    "monthly_note": "/ mois (sur 6 mois)",
     "items": [
       { 
         "title": "Basique", 
@@ -101,7 +105,7 @@
         "original_price": "299€",
         "discount": "-50%",
         "cta": "Commencez votre parcours",
-        "features": ["Design essentiel", "Site one-page", "Optimisation mobile", "SEO de base"] 
+        "features": ["Design essentiel", "Site one-page", "Optimisation mobile", "SEO de base", "Formulaire \"Contactez-moi\"", "Protocoles de sécurité standard (SSL)", "1 session de modifications incluse"] 
       },
       { 
         "title": "Standard", 
@@ -111,7 +115,7 @@
         "original_price": "399€",
         "discount": "-40%",
         "cta": "Créez votre site",
-        "features": ["Design sur mesure", "Jusqu'à 5 pages", "Performances optimisées", "SEO avancé", "Formulaires de contact"] 
+        "features": ["Design sur mesure", "Jusqu'à 5 pages", "Performances optimisées", "SEO avancé", "Formulaires de contact avancés", "Base de données & Newsletter intégrées", "Sécurité standard et pare-feu", "Modifications autorisées pendant le développement"] 
       },
       { 
         "title": "Premium", 
@@ -120,7 +124,7 @@
         "original_price": "599€",
         "discount": "-30%",
         "cta": "Développez votre activité",
-        "features": ["Expérience immersive", "Pages illimitées", "Animations avancées", "Intégration 3D", "Support prioritaire"] 
+        "features": ["Expérience immersive", "Pages illimitées", "Animations avancées", "Intégration 3D", "Support prioritaire", "Base de données avancée & Blog intégré", "Sécurité avancée & conformité RGPD complète", "Modifications et support inclus pendant 3 mois"] 
       }
     ]
   },
@@ -164,5 +168,123 @@
     "privacy_content": "Bienvenue sur notre site web.\nCette Politique de Confidentialité décrit comment les données personnelles des utilisateurs sont collectées, utilisées et protégées conformément au Règlement Européen RGPD (UE 2016/679).\n\n1. Responsable du traitement\nLe responsable du traitement est :\nLOGON AHIOUO GEORGES FABRICE\nEmail : fabrice.logon@testsitelab.it\nTéléphone : +39 351 987 7057\n\n2. Types de données collectées\nNous pouvons collecter les données suivantes :\n- Nom et prénom\n- Adresse email\n- Numéro de téléphone\n- Informations envoyées via les formulaires de contact\n- Données techniques de navigation (adresse IP, navigateur, appareil)\n- Cookies et outils d'analyse de trafic\n\n3. Finalité du traitement\nLes données collectées sont utilisées pour :\n- Répondre aux demandes de contact\n- Fournir des consultations et services professionnels\n- Gérer les demandes commerciales et devis\n- Améliorer le site et l'expérience utilisateur\n- Analyser le trafic et les performances du site\n- Respecter les obligations légales\n\n4. Base juridique\nLe traitement des données est basé sur :\n- le consentement de l'utilisateur\n- l'exécution d'un contrat ou d'une demande pré-contractuelle\n- les obligations légales\n- l'intérêt légitime du responsable\n\n5. Méthodes de traitement\nLes données sont traitées de manière sécurisée et protégées contre tout accès non autorisé, perte ou divulgation.\n\n6. Conservation des données\nLes données sont conservate pour le temps nécessaire à la fourniture des services demandés ou pour les obligations légales.\n\n7. Partage des données\nLes données peuvent être partagées avec :\n- prestataires d'hébergement\n- plateformes d'email/newsletter\n- outils d'analyse\n- collaborateurs techniques\nLes données ne sont pas vendues à des tiers.\n\n8. Droits de l'utilisateur\nL'utilisateur peut à tout moment :\n- demander l'accès aux données\n- demander la modification ou la suppression\n- limiter le traitement\n- s'opposer au traitement\n- demander la portabilité des données\nPour exercer vos droits : Email : fabrice.logon@testsitelab.it\n\n9. Cookies\nCe site utilise des cookies techniques et, sur consentement, des cookies statistiques et marketing.\nPour plus d'informations, consultez la Politique relative aux Cookies.",
     "terms_content": "En utilisant ce site web, l'utilisateur accepte les Termes et Conditions suivants.\n\n1. Services offerts\nLe site propose des services professionnels liés à :\n- création de sites web\n- design web\n- conseil numérique\n- analyse de données\n- support technique\n- optimisation et gestion de sites\n\n2. Demandes de devis\nLes demandes envoyées via le site ne constituent pas un contrat contraignant jusqu'à l'acceptation formelle par le fournisseur.\n\n3. Propriété intellectuelle\nTout le contenu du site (textes, images, logos, design, code) est protégé par le droit d'auteur et ne peut être copié sans autorisation.\n\n4. Responsabilité\nLe propriétaire du site ne garantit pas l'absence totale d'erreurs techniques, d'interruptions ou de dysfonctionnements. L'utilisateur utilise le site sous sa propre responsabilité.\n\n5. Paiements et services\nLes modalités de paiement, les délais et les conditions spécifiques sont convenus directement avec le client via un devis o un contrat séparé.\n\n6. Limitation de responsabilité\nLe propriétaire n'est pas responsable des pertes indirectes, des dommages résultant d'une utilisation inappropriée du sito ou des interruptions causées par des tiers.\n\n7. Modifications\nNous nous réservons le droit de modifier ces Termes à tout moment.\n\n8. Loi applicable\nCes Termes sont régis par la loi italienne.",
     "cookie_content": "Cette Politique relative aux Cookies explique comment Test Site Lab utilise les cookies et technologies similaires.\n\nQue sono les cookies ?\nLes cookies sont de petits fichiers texte qui sont stockés sur votre appareil lorsque vous visitez un site web.\n\nQuels cookies utilisons-nous ?\n- Cookies Techniques : Essentiels au fonctionnement du site.\n- Cookies Analytiques : Utilisés pour collecter des informations agrégées sur le nombre d'utilisateurs et la façon dont ils visitent le site.\n\nComment gérer les cookies ?\nVous pouvez modifier les préférences relatives aux cookies via les paramètres de votre navigateur ou en cliquant sur la bannière cookie présente sul le site."
+  },
+  "menu": {
+    "toggle_label": "Menu",
+    "title": "Navigation",
+    "status_available": "Disponible pour de nouveaux projets",
+    "chi_sono_title": "À Propos",
+    "chi_sono_subtitle": "Web Designer & Développeur 3D",
+    "chi_sono_desc": "Bienvenue dans mon espace numérique. Je suis Fabrice Logon, développeur et designer spécialisé dans la création d'expériences web haute performance. J'accompagne les entreprises, les startups et les professionnels à traduire leurs visions en produits digitaux exceptionnels, en alliant esthétique raffinée, interactivité 3D avancée et code rapide conçu pour être facilement trouvé sur Google. Collaborons ensemble pour propulser votre présence en ligne au niveau supérieur.",
+    "chi_sono_location": "Milan, Italie",
+    "servizi_title": "Services & Tarifs",
+    "servizi_desc": "Des solutions sur mesure conçues pour votre croissance numérique. Des sites d'entreprise aux applications web 3D immersives.",
+    "servizi_cta": "Explorer nos forfaits complets",
+    "portfolio_title": "Portfolio Sélectionné",
+    "portfolio_desc": "Cliquez sur l'un des projets pour voir ses détails directement ici sur le site.",
+    "blog_title": "Test Site Blog & Insights",
+    "blog_desc": "Articles et guides exclusifs sur le développement 3D, l'optimisation SEO et les dernières tendances du web design.",
+    "blog_read_more": "Lire l'article",
+    "blog_close": "Retour au menu",
+    "blog_articles": [
+      {
+        "id": "web-3d-conversion",
+        "title": "L'ère du Web 3D : Pourquoi un site interactif convertit 40% de plus",
+        "tag": "TECH & DESIGN",
+        "date": "18 mai 2026",
+        "readTime": "3 min",
+        "intro": "Découvrez comment les graphismes 3D interactifs redéfinissent les taux de conversion des landing pages modernes.",
+        "content": "Dans le paysage numérique actuel, capter l'attention de l'utilisateur est plus difficile que jamais. Les sites web traditionnels, statiques et en 2D classique, ont du mal à se démarquer.\n\nL'intégration de technologies comme **Three.js** et **React Three Fiber** permet de créer des éléments 3D interactifs qui réagissent aux mouvements de l'utilisateur. Ce dynamisme n'est pas seulement esthétique : il augmente le temps moyen passé sur le site et crée un lien émotionnel mémorable avec le visiteeur.\n\nDes statistiques récentes prouvent que les expériences 3D interactives enregistrent **jusqu'à 40% de conversions en plus** par rapport aux mises en page classiques. Permettre à l'utilisateur d'explorer un produit ou un concept en 3D réduit la charge cognitive et rend l'interaction inoubliable. Test Site Lab conçoit ces solutions sur mesure, tout en garantissant des temps de chargement ultra-rapides et une stabilité maximale."
+      },
+      {
+        "id": "seo-strategies-2026",
+        "title": "SEO et IA Search : Comment se positionner en première page sur Google en 2026",
+        "tag": "SEO & STRATEGY",
+        "date": "10 mai 2026",
+        "readTime": "4 min",
+        "intro": "Les règles du référencement naturel ont changé. Voici comment se faire trouver aujourd'hui.",
+        "content": "Avec l'essor dei moteurs de recherche basés sur l'intelligence artificielle, le SEO moderne ne consiste plus à insérer de simples mots-clés répétitifs.\n\nLes stratégies gagnantes reposent désormais sur :\n1. **Recherche sémantique & intention** : Google privilégie les contenus exhaustifs qui répondent réellement aux questions des utilisateurs.\n2. **Noyau technique irréprochable** : La vitesse de chargement, la stabilité visuelle (CLS) et la réactivité (Core Web Vitals) sont essentielles.\n3. **Engagement de l'utilisateur (UX)** : Un site interactif et intuitif réduit le taux de rebond, indiquant aux moteurs la haute qualité du site.\n\nPour dominer les résultats de recherche, chaque site construit par Test Site Lab intègre nativement des balises méta avancées, un balisage structuré Schema.org (JSON-LD) et une vitesse optimisée au maximum."
+      },
+      {
+        "id": "framer-motion-secrets",
+        "title": "Framer Motion : Le secret des micro-interactions de qualité",
+        "tag": "UI/UX",
+        "date": "05 mai 2026",
+        "readTime": "3 min",
+        "intro": "Comment implémenter des animations fluides et intelligentes qui améliorent l'expérience utilisateur.",
+        "content": "Les micro-interactions sont ces animations subtiles qui se produisent lorsqu'un utilisateur survole un bouton, ouvre un menu ou remplit un formulaire.\n\nMême si elles semblent mineures, ce sont elles qui séparent un site amateur d'une expérience numérique haut de gamme. **Framer Motion** est la bibliothèque d'animation de référence pour React, capable de gérer des transitions physiques complexes de manière extrêmement fluide et légère.\n\nL'utilisation de Framer Motion apporte de la réactivité et de la 'vie' à l'interface, guidant sans effort l'œil de l'utilisateur vers les actions clés sans jamais ralentir les performances du navigateur."
+      }
+    ]
+  },
+  "contact_form": {
+    "badge": "Contact",
+    "title": "Entrons en Contact",
+    "description": "Vous avez un projet en tête ou souhaitez une consultation gratuite ? Écrivez-moi directement d'ici ou utilisez les canaux officiels.",
+    "left_title": "Informations & Disponibilité",
+    "left_desc": "Écrivez-moi directement par e-mail ou via WhatsApp. Je réponds généralement en quelques heures.",
+    "name_label": "Nom complet",
+    "name_placeholder": "Entrez votre nom",
+    "email_label": "Adresse E-mail",
+    "email_placeholder": "votre-email@exemple.com",
+    "subject_label": "Sujet",
+    "subject_placeholder": "Sélectionnez un sujet",
+    "subject_options": {
+      "info": "Informations Générales",
+      "quote": "Demande de Devis",
+      "consulting": "Consultation Gratuite (30 min)",
+      "package_base": "Demande Pack Base",
+      "package_normal": "Demande Pack Normal",
+      "package_premium": "Demande Pack Premium"
+    },
+    "message_label": "Message",
+    "message_placeholder": "Décrivez brièvement votre projet, vos objectifs ou vos questions...",
+    "consent_label": "Je consens au traitement des données personnelles conformément à la Politique de Confidentialité.",
+    "submit_button": "Envoyer le Message",
+    "submit_loading": "Envoi en cours...",
+    "submit_success": "Message Envoyé !",
+    "success_title": "Merci de m'avoir contacté !",
+    "success_desc": "Votre message a été envoyé avec succès. Je vous répondrai dans les plus brefs délais à l'adresse e-mail indiquée.",
+    "error_message": "Une erreur s'est produite lors de l'envoi. Veuillez réessayer plus tard ou m'écrire directement par e-mail.",
+    "validation_error": "Veuillez remplir tous les champs obligatoires et accepter la politique de confidentialité."
+  },
+  "stack_info": {
+    "definition_label": "Qu'est-ce que c'est :",
+    "usage_label": "Comment je l'utilise :",
+    "html": {
+      "desc": "Le langage fondamental pour structurer le contenu de n'importe quelle page web (textes, images, liens).",
+      "usage": "Je l'utilise pour créer une structure sémantique propre, idéale pour le référencement (SEO) et accessible à tous."
+    },
+    "css": {
+      "desc": "Le langage de style utilisé pour définir le design, les couleurs, les dispositions et l'apparence visuelle des pages.",
+      "usage": "Je l'utilise pour concevoir des interfaces réactives, modernes et soignées dans les moindres détails, avec des dispositions fluides."
+    },
+    "tailwind": {
+      "desc": "Un framework CSS basé sur des classes utilitaires qui accélère l'écriture des styles directement dans le code.",
+      "usage": "Je l'utilise pour créer des mises en page sur mesure extrêmement rapidement, en réduisant la taille des fichiers chargés."
+    },
+    "js": {
+      "desc": "Le langage de programmation qui rend les pages web interactives et dynamiques.",
+      "usage": "Je l'utilise pour gérer les calculs, les logiques complexes, les animations avancées et les communications en temps réel avec les serveurs."
+    },
+    "react": {
+      "desc": "La bibliothèque JavaScript la plus populaire au monde pour concevoir des interfaces utilisateur rapides basées sur des composants.",
+      "usage": "Je l'utilise pour créer des applications web hautement réactives et performantes, où les pages s'actualisent instantanément sans recharger."
+    },
+    "python": {
+      "desc": "Un langage de programmation puissant et polyvalent, réputé pour sa lisibilité et sa prise en charge des intégrations d'intelligence artificielle.",
+      "usage": "Je l'utilise pour implémenter des logiques backend avancées, des traitements de données complexes et des intégrations IA."
+    },
+    "node_js": {
+      "desc": "Un environnement d'exécution JavaScript côté serveur qui permet d'exécuter du code JS en dehors du navigateur.",
+      "usage": "Je l'utilise pour concevoir des serveurs rapides, des API performantes et gérer des flux de données en temps réel à haute efficacité."
+    },
+    "mysql": {
+      "desc": "L'un des systèmes de gestion de bases de données relationnelles les plus répandus et fiables au monde.",
+      "usage": "Je l'utilise pour stocker et organiser de manière sécurisée les données structurées de vos utilisateurs et produits."
+    },
+    "oracle": {
+      "desc": "Un système de base de données d'entreprise extrêmement robuste, conçu pour gérer d'énormes volumes de données.",
+      "usage": "Je l'utilise dans des projets d'envergure nécessitant une fiabilité maximale, une sécurité absolue et une évolutivité industrielle."
+    }
   }
 }

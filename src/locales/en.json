@@ -93,6 +93,10 @@
   },
   "services_modal": {
     "title": "My Services",
+    "one_time_label": "One-time Payment",
+    "monthly_label": "Installment Plan (max 6 months)",
+    "one_time_note": "one-time",
+    "monthly_note": "/ month (for 6 payments)",
     "items": [
       { 
         "title": "Basic", 
@@ -101,7 +105,7 @@
         "original_price": "299€",
         "discount": "-50%",
         "cta": "Start Your Journey",
-        "features": ["Essential design", "Single-page site", "Mobile optimization", "Basic SEO"] 
+        "features": ["Essential design", "Single-page site", "Mobile optimization", "Basic SEO", "\"Contact Me\" form", "Standard security protocols (SSL)", "1 revision session included"] 
       },
       { 
         "title": "Standard", 
@@ -111,7 +115,7 @@
         "original_price": "399€",
         "discount": "-40%",
         "cta": "Build Your Website",
-        "features": ["Custom design", "Up to 5 pages", "Optimized performance", "Advanced SEO", "Contact forms"] 
+        "features": ["Custom design", "Up to 5 pages", "Optimized performance", "Advanced SEO", "Advanced contact forms", "Integrated Database & Newsletter", "Standard security & firewall", "Revisions allowed during development"] 
       },
       { 
         "title": "Premium", 
@@ -120,7 +124,7 @@
         "original_price": "599€",
         "discount": "-30%",
         "cta": "Scale Your Business",
-        "features": ["Immersive experience", "Unlimited pages", "Advanced animations", "3D integration", "Priority support"] 
+        "features": ["Immersive experience", "Unlimited pages", "Advanced animations", "3D integration", "Priority support", "Advanced Database & Integrated Blog", "Advanced security & GDPR compliance", "3 months of revisions and support included"] 
       }
     ]
   },
@@ -164,5 +168,123 @@
     "privacy_content": "Welcome to our website.\nThis Privacy Policy describes how users' personal data are collected, used, and protected in compliance with the European GDPR Regulation (EU 2016/679).\n\n1. Data Controller\nThe data controller is:\nLOGON AHIOUO GEORGES FABRICE\nEmail: fabrice.logon@testsitelab.it\nPhone: +39 351 987 7057\n\n2. Types of data collected\nWe may collect the following data:\n- Name and surname\n- Email address\n- Phone number\n- Information sent via contact forms\n- Technical navigation data (IP address, browser, device)\n- Cookies and traffic analysis tools\n\n3. Purpose of processing\nThe collected data are used to:\n- Respond to contact requests\n- Provide professional consultations and services\n- Manage commercial requests and quotes\n- Improve the site and user experience\n- Analyze site traffic and performance\n- Comply with legal obligations\n\n4. Legal basis\nData processing is based on:\n- user consent\n- execution of a contract or pre-contractual request\n- legal obligations\n- legitimate interest of the controller\n\n5. Processing methods\nData are processed securely and protected against unauthorized access, loss, or disclosure.\n\n6. Data retention\nData are kept for the time necessary to provide the requested services or for legal obligations.\n\n7. Data sharing\nData may be shared with:\n- hosting providers\n- email/newsletter platforms\n- analytics tools\n- technical collaborators\nData are not sold to third parties.\n\n8. User rights\nThe user can at any time:\n- request access to data\n- ask for modification or deletion\n- limit the processing\n- object to the processing\n- request data portability\nTo exercise your rights: Email: fabrice.logon@testsitelab.it\n\n9. Cookies\nThis site uses technical cookies and, upon consent, statistical and marketing cookies.\nFor more information, consult the Cookie Policy.",
     "terms_content": "By using this website, the user accepts the following Terms and Conditions.\n\n1. Services offered\nThe site offers professional services related to:\n- website creation\n- web design\n- digital consultancy\n- data analysis\n- technical support\n- site optimization and management\n\n2. Quote requests\nRequests sent through the site do not constitute a binding contract until formal acceptance by the provider.\n\n3. Intellectual property\nAll content on the site (texts, images, logos, design, code) is protected by copyright and cannot be copied without authorization.\n\n4. Responsibility\nThe site owner does not guarantee the total absence of technical errors, interruptions, or malfunctions. The user uses the site under their own responsibility.\n\n5. Payments and services\nPayment methods, timing, and specific conditions are agreed directly with the client via a separate quote or contract.\n\n6. Limitation of liability\nThe owner is not responsible for indirect losses, damages resulting from improper use of the site, or interruptions caused by third parties.\n\n7. Changes\nWe reserve the right to modify these Terms at any time.\n\n8. Applicable law\nThese Terms are governed by Italian law.",
     "cookie_content": "This Cookie Policy explains how Test Site Lab uses cookies and similar technologies.\n\nWhat are cookies?\nCookies are small text files that are stored on your device when you visit a website.\n\nWhat cookies do we use?\n- Technical Cookies: Essential for the site's functioning.\n- Analytical Cookies: Used to collect aggregate information on the number of users and how they visit the site.\n\nHow to manage cookies?\nYou can change cookie preferences via your browser settings or by clicking on the cookie banner on the site."
+  },
+  "menu": {
+    "toggle_label": "Menu",
+    "title": "Navigation",
+    "status_available": "Available for new projects",
+    "chi_sono_title": "About Me",
+    "chi_sono_subtitle": "3D Web Designer & Developer",
+    "chi_sono_desc": "Welcome to my digital space. I am Fabrice Logon, a developer and designer specializing in high-performance web experiences. I help businesses, startups, and professionals translate their visions into extraordinary digital products, fusing refined aesthetics, advanced 3D interactivity, and fast code designed to be easily found on Google. Let's collaborate to elevate your online presence to the next level.",
+    "chi_sono_location": "Milan, Italy",
+    "servizi_title": "Services & Rates",
+    "servizi_desc": "Tailored solutions designed for your digital growth. From corporate landing pages to immersive 3D web applications.",
+    "servizi_cta": "Explore full packages",
+    "portfolio_title": "Selected Portfolio",
+    "portfolio_desc": "Click on any project to view its details directly here on the website.",
+    "blog_title": "Test Site Blog & Insights",
+    "blog_desc": "Exclusive articles and guides on 3D development, SEO strategies, and the latest web design trends.",
+    "blog_read_more": "Read Article",
+    "blog_close": "Back to menu",
+    "blog_articles": [
+      {
+        "id": "web-3d-conversion",
+        "title": "The Era of Web 3D: Why interactive sites convert 40% more",
+        "tag": "TECH & DESIGN",
+        "date": "May 18, 2026",
+        "readTime": "3 min",
+        "intro": "Discover how interactive 3D graphics are redefining modern landing page conversion rates.",
+        "content": "In today's digital landscape, capturing user attention is harder than ever. Traditional, static, and flat 2D websites struggle to stand out.\n\nIntegrating technologies like **Three.js** and **React Three Fiber** makes it possible to create interactive 3D elements that react to user input. This interactivity is not just visual flair: it increases average dwell time and forms a memorable emotional bond with the visitor.\n\nRecent statistics show that interactive 3D experiences register **up to 40% higher conversion rates** compared to traditional flat layouts. Allowing the user to explore a product or concept in 3D space lowers cognitive barriers and makes the interaction unforgettable. Test Site Lab builds these tailored solutions while ensuring lightning-fast load times and rock-solid stability."
+      },
+      {
+        "id": "seo-strategies-2026",
+        "title": "SEO & AI Search: How to rank on page 1 of Google in 2026",
+        "tag": "SEO & STRATEGY",
+        "date": "May 10, 2026",
+        "readTime": "4 min",
+        "intro": "The search engine optimization landscape has shifted. Here is how to get discovered today.",
+        "content": "With the rise of AI-driven search engines, modern SEO is no longer about stuffing repetitive keywords into text.\n\nWinning strategies now hinge on:\n1. **Semantic Search & Intent**: Google prioritizes comprehensive content that solves real user queries.\n2. **Flawless Technical Core**: Page speed, visual stability (CLS), and responsiveness (Core Web Vitals) are vital ranking factors.\n3. **User Engagement (UX)**: Interactive, intuitive sites naturally lower bounce rates, signaling premium quality to search engines.\n\nTo dominate search results, every website built by Test Site Lab includes structured Schema.org markup (JSON-LD), advanced meta tags, and optimization for ultimate speed."
+      },
+      {
+        "id": "framer-motion-secrets",
+        "title": "Framer Motion: The secret to premium micro-interactions",
+        "tag": "UI/UX",
+        "date": "May 05, 2026",
+        "readTime": "3 min",
+        "intro": "How to implement smart, fluid animations that drastically improve user experiences.",
+        "content": "Micro-interactions are the subtle animations that happen when a user hovers over a button, opens a drawer, or submits a form.\n\nThough they seem small, they are what separates amateur layouts from high-end digital experiences. **Framer Motion** is the gold-standard animation library for React, capable of handling complex physical spring physics beautifully and lightweight.\n\nLeveraging Framer Motion gives a responsive sense of 'life' to the interface, effortlessly guiding the user's eye to high-conversion actions without sacrificing browser performance."
+      }
+    ]
+  },
+  "contact_form": {
+    "badge": "Contact",
+    "title": "Let's Get in Touch",
+    "description": "Have a project in mind or want a free consultation? Write to me directly from here or use the official channels.",
+    "left_title": "Information & Availability",
+    "left_desc": "Write to me directly via email or WhatsApp. I usually reply within a few hours.",
+    "name_label": "Full name",
+    "name_placeholder": "Enter your name",
+    "email_label": "Email Address",
+    "email_placeholder": "your-email@example.com",
+    "subject_label": "Subject",
+    "subject_placeholder": "Select a topic",
+    "subject_options": {
+      "info": "General Information",
+      "quote": "Request a Quote",
+      "consulting": "Free Consultation (30 min)",
+      "package_base": "Request Base Package",
+      "package_normal": "Request Normal Package",
+      "package_premium": "Request Premium Package"
+    },
+    "message_label": "Message",
+    "message_placeholder": "Briefly describe your project, your goals, or your questions...",
+    "consent_label": "I consent to the processing of personal data in accordance with the Privacy Policy.",
+    "submit_button": "Send Message",
+    "submit_loading": "Sending...",
+    "submit_success": "Message Sent!",
+    "success_title": "Thank you for contacting me!",
+    "success_desc": "Your message was sent successfully. I will get back to you as soon as possible at the email address provided.",
+    "error_message": "An error occurred while sending. Please try again later or write to me directly via email.",
+    "validation_error": "Please fill in all required fields and accept the privacy policy."
+  },
+  "stack_info": {
+    "definition_label": "What it is:",
+    "usage_label": "How I use it:",
+    "html": {
+      "desc": "The foundational language to structure the content of any web page (text, images, links).",
+      "usage": "I use it to build a clean semantic structure, optimal for search engines (SEO) and accessible to all."
+    },
+    "css": {
+      "desc": "The styling language used to define the design, colors, layouts, and visual appearance of pages.",
+      "usage": "I use it to create responsive, modern interfaces designed with attention to detail and fluid transitions."
+    },
+    "tailwind": {
+      "desc": "A utility-first CSS framework that speeds up writing styles directly inside the markup.",
+      "usage": "I use it to build custom layouts extremely quickly, reducing the loaded file sizes."
+    },
+    "js": {
+      "desc": "The programming language that makes web pages interactive and dynamic.",
+      "usage": "I use it to handle complex logic, calculations, advanced animations, and real-time server communications."
+    },
+    "react": {
+      "desc": "The world's most popular JavaScript library for building fast component-based user interfaces.",
+      "usage": "I use it to create highly reactive and performant web apps, where pages update instantly without reloading."
+    },
+    "python": {
+      "desc": "A powerful and versatile programming language, famous for its readability and AI integration support.",
+      "usage": "I use it to implement advanced backend logic, complex data processing, and AI integrations."
+    },
+    "node_js": {
+      "desc": "A server-side JavaScript runtime environment that allows executing JS code outside the browser.",
+      "usage": "I use it to build fast servers, highly performant APIs, and manage efficient real-time data flows."
+    },
+    "mysql": {
+      "desc": "One of the most widespread and reliable relational database management systems in the world.",
+      "usage": "I use it to safely store and organize the structured data of your users and products."
+    },
+    "oracle": {
+      "desc": "An extremely robust enterprise database system designed to handle massive volumes of data.",
+      "usage": "I use it in enterprise projects that demand maximum reliability, security, and industrial scalability."
+    }
   }
 }
