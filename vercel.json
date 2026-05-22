@@ -21,7 +21,7 @@
         },
         {
           "key": "Content-Security-Policy",
-          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://vercel.live; connect-src 'self' https://vercel.live https://*.supabase.co https://*.supabase.in https://*.vercel-insights.com wss://*.supabase.co wss://*.supabase.in; style-src 'self' 'unsafe-inline' https://vercel.live https://fonts.googleapis.com; font-src 'self' https://vercel.live https://fonts.gstatic.com data:; img-src 'self' https://vercel.live data: blob:; frame-src 'self' https://vercel.live; object-src 'none';"
+          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://vercel.live https://*.vercel.live https://*.vercel.com; connect-src 'self' https://vercel.live https://*.vercel.live https://vercel.com https://*.vercel.com https://*.supabase.co https://*.supabase.in https://*.vercel-insights.com wss://*.supabase.co wss://*.supabase.in wss://*.pusher.com https://*.pusher.com; style-src 'self' 'unsafe-inline' https://vercel.live https://*.vercel.live https://fonts.googleapis.com; font-src 'self' https://vercel.live https://*.vercel.live https://fonts.gstatic.com data:; img-src 'self' https://vercel.live https://*.vercel.live https://vercel.com https://*.vercel.com data: blob:; frame-src 'self' https://vercel.live https://*.vercel.live https://vercel.com https://*.vercel.com; object-src 'none';"
         }
       ]
     },
@@ -54,7 +54,7 @@
   ],
   "rewrites": [
     {
-      "source": "/((?!api|robots.txt|sitemap.xml|favicon.svg|icons.svg|.*\\..*).*)",
+      "source": "/((?!api|robots.txt|sitemap.xml|favicon.svg|icons.svg|_vercel|.*\\..*).*)",
       "destination": "/index.html"
     }
   ]
