@@ -54,7 +54,7 @@
   ],
   "rewrites": [
     {
-      "source": "/((?!api|robots.txt|sitemap.xml|favicon.svg|icons.svg|_vercel|.*\\..*).*)",
+      "source": "/((?!api|_vercel).*)",
       "destination": "/index.html"
     }
   ]
