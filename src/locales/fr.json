@@ -51,16 +51,16 @@
     "description": "Une sélection de mes travaux les plus récents, où le design rencontre la technologie de pointe.",
     "projects": [
       {
-        "title": "Dalla Francesca",
-        "category": "Restaurant & Réceptions",
-        "desc": "Une expérience gastronomique digitale raffinée, alliant élégance visuelle, menu interactif et réservations en ligne.",
+        "title": "Francesca",
+        "category": "Sécurité au Travail",
+        "desc": "Une plateforme numérique professionnelle pour une consultante indépendante en sécurité au travail, comprenant la présentation des services, des réglementations et un formulaire de contact dédié.",
         "link": "https://fabricetest.site/"
       },
       {
         "title": "Coach NG",
         "category": "Application Web",
         "desc": "Votre compagnon fitness digital : suivez vos entraînements et atteignez vos objectifs avec un coach dédié.",
-        "link": "https://fabricetest.site"
+        "link": "https://coachngfit.com/"
       },
       {
         "title": "Test Site Lab",

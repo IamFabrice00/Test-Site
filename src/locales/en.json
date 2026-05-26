@@ -51,16 +51,16 @@
     "description": "A selection of my most recent works, where design meets cutting-edge technology.",
     "projects": [
       {
-        "title": "Dalla Francesca",
-        "category": "Restaurant & Event Venue",
-        "desc": "A refined digital dining experience combining visual elegance, interactive menus, and seamless online booking.",
+        "title": "Francesca",
+        "category": "Workplace Safety",
+        "desc": "A professional digital platform for a freelance workplace safety consultant, featuring service management, safety guidelines, and a dedicated contact form.",
         "link": "https://fabricetest.site/"
       },
       {
         "title": "Coach NG",
         "category": "Web Application",
         "desc": "Your digital fitness companion: track your workouts and reach your goals with a dedicated personal trainer.",
-        "link": "https://fabricetest.site"
+        "link": "https://coachngfit.com/"
       },
       {
         "title": "Test Site Lab",

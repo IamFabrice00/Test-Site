@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from 'framer-motion'
-import { X, ExternalLink, Sparkles, Dumbbell, Globe, Code } from 'lucide-react'
+import { X, ExternalLink, Shield, Dumbbell, Globe, Code } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 
 interface PortfolioModalProps {
@@ -15,18 +15,18 @@ export default function PortfolioModal({ isOpen, onClose }: PortfolioModalProps)
   // Enhanced project mockups metadata matching the translations
   const projectMeta = [
     {
-      tech: ['React', 'Three.js', 'Framer Motion', 'OpenAI API'],
-      icon: <Sparkles className="project-mockup-icon" size={40} color="#10b981" />,
+      tech: ['React', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
+      icon: <Shield className="project-mockup-icon" size={40} color="#10b981" />,
       gradient: 'linear-gradient(135deg, rgba(16, 185, 129, 0.15) 0%, rgba(99, 102, 241, 0.15) 100%)',
       glowColor: 'rgba(16, 185, 129, 0.4)',
-      address: 'smarteat.space'
+      address: 'fabricetest.site'
     },
     {
       tech: ['React', 'TypeScript', 'Tailwind CSS', 'Supabase'],
       icon: <Dumbbell className="project-mockup-icon" size={40} color="#a855f7" />,
       gradient: 'linear-gradient(135deg, rgba(168, 85, 247, 0.15) 0%, rgba(244, 63, 94, 0.15) 100%)',
       glowColor: 'rgba(168, 85, 247, 0.4)',
-      address: 'fabricetest.site'
+      address: 'coachngfit.com'
     },
     {
       tech: ['React', 'Three.js', 'R3F', 'Custom Shaders'],
